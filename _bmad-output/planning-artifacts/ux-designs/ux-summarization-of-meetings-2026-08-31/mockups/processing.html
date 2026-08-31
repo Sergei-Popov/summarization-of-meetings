@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Контекст — ход обработки</title>
+<style>
+/* Governing spines: DESIGN.md — Brand & Style; Colors; Typography; Layout & Spacing; Components: app-shell, stage-progress, notice-banner, status-badge, secondary-button, diagnostic-panel. EXPERIENCE.md — Information Architecture: Ход обработки; Component Patterns: stage-progress, notice-banner, status-badge, secondary-button; State Patterns: active stages, retryable error, saved upstream outputs; Interaction Primitives; Accessibility Floor; Key Flows 1 and 8. */
+:root{--base:#F5F7F6;--raised:#FFF;--subtle:#EEF3F1;--ink:#162C2A;--secondary:#55706D;--border:#D8E2DF;--strong:#B8CBC6;--control-border:#708781;--accent:#126E65;--accent-soft:#E8F4F1;--success:#287A4B;--success-soft:#E9F6EE;--warning:#A85D19;--warning-soft:#FFF4E7;--danger:#B33A3A;--danger-soft:#FFF0F0;--focus:#0B6DF1;--r-md:8px;--r-lg:12px;--r-full:9999px;--shadow:0 4px 16px rgba(22,44,42,.04)}
+*{box-sizing:border-box}body{margin:0;background:var(--base);color:var(--ink);font:15px/1.6 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,a{font:inherit}button,a{cursor:pointer}:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.skip-link{position:fixed;z-index:20;top:8px;left:8px;min-height:44px;padding:10px 14px;border:1px solid var(--control-border);border-radius:var(--r-md);background:var(--raised);transform:translateY(-150%);text-decoration:none}.skip-link:focus{transform:translateY(0)}.shell{display:grid;grid-template-columns:216px minmax(0,1fr);min-height:100vh}.side{display:flex;flex-direction:column;padding:20px 14px;border-right:1px solid var(--border);background:var(--subtle)}.brand{display:flex;align-items:center;min-height:44px;padding:0 10px 16px;font-weight:800}.mark{width:26px;height:26px;margin-right:9px;border-radius:8px 8px 8px 2px;background:var(--accent)}.nav{display:grid;gap:4px}.nav a{display:flex;align-items:center;gap:10px;min-width:44px;min-height:44px;padding:0 11px;border-radius:var(--r-md);color:var(--secondary);font-weight:650;text-decoration:none}.nav a[aria-current="page"]{color:var(--accent);background:var(--raised);box-shadow:inset 0 0 0 1px var(--control-border)}.local{margin-top:auto;padding:12px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,.6);color:var(--secondary);font-size:12px}.local strong{display:block;color:var(--ink)}.main{min-width:0}.top{display:flex;align-items:center;gap:12px;min-height:65px;padding:0 24px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.82)}.mobile-nav-trigger{display:none;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 12px;border:1px solid var(--control-border);border-radius:var(--r-md);background:var(--raised);color:var(--ink);font-weight:700}.back{display:grid;width:44px;height:44px;place-items:center;border:1px solid var(--control-border);border-radius:var(--r-md);background:var(--raised);color:var(--ink);text-decoration:none}.content{max-width:980px;margin:auto;padding:32px 24px 56px}.eyebrow{margin:0 0 6px;color:var(--secondary);font-size:12px;font-weight:750;letter-spacing:.04em;text-transform:uppercase}.title{display:flex;gap:20px;align-items:flex-start}.title h1{margin:0;font-size:28px;line-height:1.2;letter-spacing:-.02em}.title p{margin:7px 0 0;color:var(--secondary)}.badge{display:inline-flex;align-items:center;min-height:30px;margin-left:auto;padding:0 10px;border-radius:var(--r-full);background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:750;white-space:nowrap}.semantic-status{margin:12px 0 0;padding:9px 12px;border-left:3px solid var(--accent);background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:700}.card{margin-top:22px;padding:24px;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--raised);box-shadow:var(--shadow)}.card h2{margin:0;font-size:18px;line-height:1.35}.card-head{display:flex;align-items:flex-start;gap:20px}.card-head p{margin:4px 0 0;color:var(--secondary);font-size:13px}.percent{margin-left:auto;color:var(--accent);font-size:28px;font-weight:750}.bar{overflow:hidden;height:8px;margin:20px 0 24px;border-radius:var(--r-full);background:var(--border)}.bar span{display:block;width:68%;height:100%;background:var(--accent)}.stages{display:grid;gap:0}.stage{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;min-height:82px;padding:14px 0;border-top:1px solid var(--border)}.stage:first-child{border-top:0}.stage-mark{display:grid;width:36px;height:36px;place-items:center;border:2px solid var(--strong);border-radius:50%;color:var(--secondary);font-weight:750}.stage.done .stage-mark{border-color:var(--success);background:var(--success-soft);color:var(--success)}.stage.active .stage-mark{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}.stage strong{display:block}.stage p{margin:2px 0 0;color:var(--secondary);font-size:13px}.stage-state{color:var(--secondary);font-size:12px;font-weight:700;text-align:right}.stage.done .stage-state{color:var(--success)}.stage.active .stage-state{color:var(--accent)}.actions{display:flex;align-items:center;gap:10px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}.button{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 15px;border:1px solid var(--control-border);border-radius:var(--r-md);background:var(--raised);color:var(--ink);font-size:13px;font-weight:700}.button[disabled]{cursor:not-allowed;opacity:.72}.hint{margin-left:auto;color:var(--secondary);font-size:12px}.alternate{margin-top:38px;padding-top:34px;border-top:1px solid var(--strong)}.alternate-label{margin:0 0 12px;color:var(--secondary);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.notice{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:14px;align-items:center;margin:16px 0 4px;padding:14px;border:1px solid var(--warning);border-radius:var(--r-md);background:var(--warning-soft);color:var(--warning)}.notice-sign{display:grid;width:34px;height:34px;place-items:center;border:2px solid var(--warning);border-radius:50%;font-weight:800}.notice strong{display:block}.notice p{margin:2px 0 0;font-size:13px}.retry{border-color:var(--accent);background:var(--accent);color:#FFF}.failed .stage-mark{border-color:var(--warning);background:var(--warning-soft);color:var(--warning)}.failed .stage-state{color:var(--warning)}.saved{margin-top:16px;padding:13px 15px;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--subtle);color:var(--secondary);font-size:13px}.saved strong{color:var(--ink)}
+@media(max-width:1050px){.shell{grid-template-columns:64px minmax(0,1fr)}.side{padding-inline:8px}.brand{justify-content:center;padding-inline:0}.mark{margin:0}.brand span,.nav span,.local{display:none}.nav a{justify-content:center;padding:0}}
+@media(max-width:899px){.shell{display:block}.side{display:none}.top{padding:0 16px}.mobile-nav-trigger{display:inline-flex}.content{padding:24px 16px 42px}.notice{grid-template-columns:36px 1fr}.notice .button{grid-column:2}.hint{width:100%;margin:0}.actions{flex-wrap:wrap}}
+@media(max-width:560px){.title{display:block}.badge{margin:14px 0 0}.card{padding:18px}.stage{grid-template-columns:40px 1fr}.stage-state{grid-column:2;text-align:left}.percent{font-size:24px}.card-head{display:block}.percent{display:block;margin:8px 0 0}.actions .button{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style></head>
+<body>
+  <a class="skip-link" href="#main-content">К основному содержимому</a>
+  <div class="shell">
+    <aside class="side" id="primary-navigation-panel">
+      <div class="brand"><i class="mark" aria-hidden="true"></i><span>Контекст</span></div>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#" aria-label="Встречи" aria-current="page"><b aria-hidden="true">▤</b><span>Встречи</span></a>
+        <a href="#" aria-label="Поиск"><b aria-hidden="true">⌕</b><span>Поиск</span></a>
+        <a href="#" aria-label="Участники"><b aria-hidden="true">♙</b><span>Участники</span></a>
+        <a href="#" aria-label="Профили"><b aria-hidden="true">◫</b><span>Профили</span></a>
+        <a href="#" aria-label="Настройки"><b aria-hidden="true">⚙</b><span>Настройки</span></a>
+      </nav>
+      <div class="local"><strong>● Локальная обработка</strong>Содержание не покидает устройство.</div>
+    </aside>
+    <main class="main" id="main-content" tabindex="-1">
+      <header class="top">
+        <button class="mobile-nav-trigger" type="button" aria-expanded="false" aria-controls="primary-navigation-panel" aria-describedby="mobile-nav-behavior">☰ Меню</button>
+        <a class="back" href="#" aria-label="Назад к библиотеке">←</a>
+        <strong>Ход обработки</strong>
+        <span class="sr-only" id="mobile-nav-behavior">На узкой ширине кнопка открывает навигацию поверх страницы, переносит фокус на первую ссылку и делает фон недоступным. Escape закрывает меню и возвращает фокус на эту кнопку. Навигация остаётся доступной при увеличении масштаба.</span>
+      </header>
+      <div class="content">
+        <p class="eyebrow">Каноническое состояние · обработка идёт</p>
+        <div class="title">
+          <div><h1>Синхронизация релиза и план запуска</h1><p>Видео · 4,8 ГБ · запущено сегодня в 14:02</p></div>
+          <span class="badge">↻ Транскрибация выполняется</span>
+        </div>
+        <p class="semantic-status" role="status" aria-live="polite" aria-atomic="true" aria-describedby="announcement-policy">Этап «Транскрибация» начат.</p>
+        <p class="sr-only" id="announcement-policy">Этот стабильный узел сообщает только смысловые переходы этапов, запрос отмены, итог отмены и восстановление состояния. Процент и сигналы активности в него не публикуются.</p>
+        <section class="card" aria-labelledby="progress-title">
+          <div class="card-head"><div><h2 id="progress-title">Анализ встречи</h2><p aria-live="off">Прошло 24 минуты · состояние сохранено 4 секунды назад</p></div><span class="percent" aria-hidden="true">68%</span></div>
+          <span class="sr-only" id="progress-stage-label">Этап 2: транскрибация</span>
+          <div class="bar" role="progressbar" aria-labelledby="progress-title progress-stage-label" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" aria-valuetext="68 процентов"><span></span></div>
+          <div class="stages">
+            <article class="stage done"><span class="stage-mark" aria-hidden="true">✓</span><div><strong>1. Подготовка аудио</strong><p>Аудиодорожка извлечена локально и сохранена.</p></div><span class="stage-state">✓ Завершено · 3 мин</span></article>
+            <article class="stage active"><span class="stage-mark" aria-hidden="true">2</span><div><strong>2. Транскрибация</strong><p>Локальный Whisper medium · русский язык</p></div><span class="stage-state">↻ Выполняется · 68%</span></article>
+            <article class="stage"><span class="stage-mark" aria-hidden="true">3</span><div><strong>3. Суммаризация</strong><p>Запустится после сохранения полной расшифровки.</p></div><span class="stage-state">○ Ожидает</span></article>
+          </div>
+          <div class="actions">
+            <button class="button" type="button" aria-busy="false" aria-describedby="cancel-contract">Отменить обработку</button>
+            <span class="hint">Можно закрыть страницу. Задание продолжится и восстановится после перезапуска.</span>
+            <span class="sr-only" id="cancel-contract">После активации фокус остаётся на кнопке: её подпись меняется на «Отменяется…», aria-busy становится true, а кнопка становится disabled. Узел статуса один раз сообщает «Отмена запрошена», затем итог; сигналы активности не объявляются.</span>
+          </div>
+        </section>
+        <section class="alternate" aria-labelledby="failure-title">
+          <p class="alternate-label">Альтернативное состояние · восстановимая ошибка суммаризации</p>
+          <div class="title"><div><h1 id="failure-title">Планирование спринта платформы</h1><p>Расшифровка сохранена · повторять транскрибацию не требуется</p></div><span class="badge" style="background:var(--warning-soft);color:var(--warning)">! Требует действия</span></div>
+          <div class="notice">
+            <span class="notice-sign" aria-hidden="true">!</span>
+            <div id="summary-error-message" role="alert" aria-atomic="true"><strong>Суммаризация не завершена</strong><p>Локальная модель остановилась из-за нехватки памяти. Расшифровка сохранена.</p></div>
+            <button class="button retry" type="button" aria-describedby="summary-error-message retry-contract">Повторить суммаризацию</button>
+          </div>
+          <p class="sr-only" id="retry-contract">Повтор запускает только этап суммаризации; фокус сохраняется на вызвавшей действие кнопке, а результат сообщается через стабильный узел статуса.</p>
+          <section class="card">
+            <div class="stages">
+              <article class="stage done"><span class="stage-mark" aria-hidden="true">✓</span><div><strong>1. Подготовка аудио</strong><p>Результат сохранён.</p></div><span class="stage-state">✓ Завершено · 2 мин</span></article>
+              <article class="stage done"><span class="stage-mark" aria-hidden="true">✓</span><div><strong>2. Транскрибация</strong><p>Расшифровка доступна на странице встречи.</p></div><span class="stage-state">✓ Завершено · 41 мин</span></article>
+              <article class="stage failed"><span class="stage-mark" aria-hidden="true">!</span><div><strong>3. Суммаризация</strong><p>Ошибка LOCAL_MODEL_OUT_OF_MEMORY · повтор доступен.</p></div><span class="stage-state">! Не завершено</span></article>
+            </div>
+            <div class="saved"><strong>Сохранено:</strong> исходная запись, подготовленное аудио и полная расшифровка с таймкодами. Новый запуск повторит только суммаризацию.</div>
+            <div class="actions"><button class="button retry" type="button" aria-describedby="summary-error-message retry-contract">Повторить суммаризацию</button><button class="button" type="button">Открыть расшифровку</button><span class="hint">Подробности доступны в безопасной диагностике.</span></div>
+          </section>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контекст — страница встречи</title>
+  <style>
+    /* Governing spines: DESIGN.md and EXPERIENCE.md. The spines win on conflict. */
+    :root {
+      --base: #f5f7f6; --raised: #fff; --subtle: #eef3f1; --ink: #162c2a;
+      --secondary: #405653; --muted: #55706d; --border: #d8e2df;
+      --control-border: #708781; --accent: #126e65; --accent-soft: #e8f4f1;
+      --on-accent: #fff; --success: #287a4b; --success-soft: #e9f6ee;
+      --warning: #a85d19; --warning-soft: #fff4e7; --focus: #0b6df1;
+      --player: #273532; --r-md: 8px; --r-lg: 12px; --r-full: 9999px;
+      --shadow: 0 4px 16px rgba(22, 44, 42, .04);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body { margin: 0; color: var(--ink); background: var(--base); font: 15px/1.6 Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    button, a, input { font: inherit; }
+    button, a, input[type="range"] { cursor: pointer; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; min-height: 44px; padding: 9px 14px; border: 2px solid var(--focus); border-radius: var(--r-md); color: var(--ink); background: var(--raised); font-weight: 800; transform: translateY(-160%); }
+    .skip-link:focus { transform: translateY(0); }
+
+    .shell { display: grid; grid-template-columns: 216px minmax(0, 1fr); min-height: 100vh; }
+    .side { display: flex; flex-direction: column; padding: 20px 14px; border-right: 1px solid var(--border); background: var(--subtle); }
+    .brand { display: flex; align-items: center; min-height: 44px; padding: 0 10px 16px; font-weight: 800; }
+    .mark { width: 26px; height: 26px; margin-right: 9px; border-radius: 8px 8px 8px 2px; background: var(--accent); }
+    .nav { display: grid; gap: 4px; }
+    .nav a { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 11px; border-radius: var(--r-md); color: var(--muted); font-weight: 650; text-decoration: none; }
+    .nav a.active { color: var(--accent); background: var(--raised); box-shadow: inset 0 0 0 1px var(--border); }
+    .nav-glyph { display: inline-grid; width: 22px; place-items: center; }
+    .local { margin-top: auto; padding: 12px; border: 1px solid var(--border); border-radius: var(--r-lg); color: var(--muted); background: rgba(255, 255, 255, .6); font-size: 12px; }
+    .local strong { display: block; color: var(--ink); }
+
+    .main { min-width: 0; }
+    .top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; min-height: 65px; padding: 10px 24px; border-bottom: 1px solid var(--border); background: rgba(255, 255, 255, .82); }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 0 15px; border: 1px solid var(--control-border); border-radius: var(--r-md); color: var(--ink); background: var(--raised); font-size: 13px; font-weight: 700; text-decoration: none; }
+    .back { width: 44px; padding: 0; }
+    .mobile-nav-trigger { display: none; gap: 8px; }
+    .top-path { color: var(--muted); font-size: 13px; }
+    .top-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+    .primary { border-color: var(--accent); color: var(--on-accent); background: var(--accent); }
+
+    .content { max-width: 1200px; margin: auto; padding: 26px 24px 56px; }
+    .heading { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px; }
+    .heading h1 { margin: 0 0 7px; font-size: 28px; line-height: 1.2; letter-spacing: -.02em; }
+    .overline { margin: 0 0 5px; color: var(--muted); font-size: 12px; font-weight: 750; letter-spacing: .05em; text-transform: uppercase; }
+    .meta-line { display: flex; flex-wrap: wrap; gap: 7px 16px; color: var(--muted); font-size: 12px; }
+    .badge { display: inline-flex; align-items: center; min-height: 30px; margin-left: auto; padding: 0 10px; border-radius: var(--r-full); color: var(--success); background: var(--success-soft); font-size: 12px; font-weight: 750; white-space: nowrap; }
+    .detail-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr); grid-template-areas: "summary summary" "agreements agreements" "player metadata" "transcript transcript"; gap: 18px; align-items: start; }
+    .card { border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--raised); box-shadow: var(--shadow); }
+    .summary { grid-area: summary; padding: 19px; }
+    .agreements { grid-area: agreements; overflow: hidden; }
+    .player { grid-area: player; overflow: hidden; color: #fff; background: var(--player); }
+    .metadata { grid-area: metadata; padding: 18px; }
+    .transcript { grid-area: transcript; padding: 18px; }
+    .section-title { display: flex; align-items: center; gap: 8px; margin: 0 0 13px; font-size: 18px; line-height: 1.35; }
+    .section-title small { margin-left: auto; color: var(--muted); font-size: 12px; font-weight: 500; }
+    .summary p { max-width: 86ch; margin: 0; color: var(--secondary); }
+    .summary-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+    .agreements-head { display: flex; align-items: center; min-height: 54px; padding: 0 18px; border-bottom: 1px solid var(--border); }
+    .agreements-head h2 { margin: 0; font-size: 18px; }
+    .count { margin-left: 8px; padding: 2px 8px; border-radius: var(--r-full); color: var(--accent); background: var(--accent-soft); font-size: 11px; font-weight: 750; }
+    .agreement { display: grid; grid-template-columns: 30px minmax(0, 1fr) 115px; gap: 11px; padding: 15px 18px; border-bottom: 1px solid var(--border); }
+    .agreement:last-child { border-bottom: 0; }
+    .agreement.important { border-left: 4px solid var(--warning); padding-left: 14px; }
+    .agreement-mark { display: grid; width: 26px; height: 26px; place-items: center; border-radius: 50%; color: var(--accent); background: var(--accent-soft); font-size: 11px; font-weight: 800; }
+    .agreement h3 { margin: 0 0 3px; font-size: 14px; line-height: 1.4; }
+    .important-label { display: inline-block; margin-bottom: 5px; color: var(--warning); font-size: 11px; font-weight: 800; }
+    .agreement p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .evidence { display: inline-flex; align-items: center; min-height: 44px; margin-top: 5px; color: var(--accent); font-size: 12px; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .due { color: var(--ink); font-size: 12px; font-weight: 750; text-align: right; }
+
+    .video-stage { min-height: 250px; border-bottom: 1px solid rgba(255, 255, 255, .18); background: linear-gradient(120deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .02)), linear-gradient(90deg, #42534f 0 32%, #273532 32% 34%, #53625f 34% 66%, #273532 66% 68%, #3a4a46 68%); }
+    .video-label { display: inline-block; margin: 16px; padding: 4px 8px; border-radius: 6px; color: #fff; background: rgba(0, 0, 0, .58); font-size: 11px; }
+    .media-controls { padding: 12px; }
+    .control-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .media-button, .transcript-open { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 0 10px; border: 1px solid #a9bbb6; border-radius: 7px; color: #fff; background: #1c2926; font-size: 12px; font-weight: 750; text-decoration: none; }
+    .play-button { min-width: 112px; color: #162c2a; background: #fff; }
+    .time-readout { min-width: 112px; color: #fff; font: 12px/1.4 SFMono-Regular, Consolas, monospace; text-align: center; }
+    .seek-label { display: block; margin: 10px 0 4px; color: #d8e5e1; font-size: 12px; }
+    .seek-range { width: 100%; min-height: 44px; accent-color: #fff; }
+    .player-meta { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; min-height: 48px; padding: 9px 14px 12px; font-size: 12px; }
+    .player-meta span:last-child { margin-left: auto; color: #d8e5e1; }
+    .parity-note { margin: 0; padding: 0 14px 14px; color: #d8e5e1; font-size: 12px; }
+
+    .fields { display: grid; gap: 15px; }
+    .field-label { display: block; margin-bottom: 6px; color: var(--muted); font-size: 12px; font-weight: 650; }
+    .task { display: flex; align-items: center; min-height: 44px; padding: 8px 12px; border: 1px solid var(--control-border); border-radius: var(--r-md); color: var(--accent); font-weight: 750; text-decoration: none; }
+    .task span { margin-left: auto; }
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .chip, .person { display: inline-flex; align-items: center; min-height: 32px; padding: 0 10px; border: 1px solid var(--border); border-radius: var(--r-full); color: var(--ink); background: var(--subtle); font-size: 12px; font-weight: 650; }
+    .person { gap: 7px; background: var(--accent-soft); }
+    .avatar { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 50%; color: var(--accent); background: var(--raised); font-size: 9px; font-weight: 800; }
+
+    .evidence-help { margin: -3px 0 13px; color: var(--muted); font-size: 12px; }
+    .segment { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 12px; padding: 13px 0; border-top: 1px solid var(--border); scroll-margin-top: 16px; }
+    .segment:focus { outline: 3px solid var(--focus); outline-offset: 3px; }
+    .segment.current { margin: 0 -10px; padding: 13px 10px; border-left: 3px solid var(--accent); background: var(--accent-soft); }
+    .timestamp { display: inline-flex; align-items: center; justify-content: center; min-width: 80px; min-height: 44px; padding: 0 8px; border: 1px solid var(--control-border); border-radius: 7px; color: var(--accent); background: var(--raised); font: 650 13px/1.45 SFMono-Regular, Consolas, monospace; }
+    .confirmation-marker { display: inline-block; margin-bottom: 4px; color: var(--accent); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .speaker { display: block; margin-bottom: 3px; font-size: 12px; font-weight: 750; }
+    .segment p { margin: 0; color: var(--secondary); font-size: 13px; }
+
+    .alternate { margin-top: 42px; padding-top: 34px; border-top: 1px solid var(--control-border); }
+    .alternate-label { margin: 0 0 14px; color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .notice { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 13px; align-items: center; padding: 14px; border: 1px solid var(--warning); border-radius: var(--r-md); color: var(--warning); background: var(--warning-soft); }
+    .notice-sign { display: grid; width: 32px; height: 32px; place-items: center; border: 2px solid var(--warning); border-radius: 50%; font-weight: 800; }
+    .notice strong { display: block; }
+    .notice p { margin: 1px 0 0; font-size: 13px; }
+    .stale-summary { margin-top: 12px; padding: 18px; border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--raised); }
+    .stale-summary h2 { margin: 0 0 9px; font-size: 18px; }
+    .stale-summary p { margin: 0; color: var(--muted); }
+
+    @media (max-width: 1050px) {
+      .shell { grid-template-columns: 64px minmax(0, 1fr); }
+      .side { padding-inline: 8px; }
+      .brand { justify-content: center; padding-inline: 0; }
+      .mark { margin: 0; }
+      .brand-name, .nav-label, .local { display: none; }
+      .nav a { justify-content: center; padding: 0; }
+    }
+    @media (max-width: 899px) {
+      .shell { display: block; }
+      .side { display: none; }
+      .mobile-nav-trigger { display: inline-flex; }
+      .top { padding-inline: 16px; }
+      .content { padding: 22px 16px 42px; }
+      .detail-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "summary" "agreements" "player" "metadata" "transcript"; }
+      .notice { grid-template-columns: 34px 1fr; }
+      .notice .button { grid-column: 2; justify-self: start; }
+    }
+    @media (max-width: 560px) {
+      .top-path { flex: 1 1 100%; }
+      .top-actions { width: 100%; margin-left: 0; }
+      .top-actions .button { flex: 1 1 auto; }
+      .heading { display: block; }
+      .badge { margin: 12px 0 0; }
+      .agreement { grid-template-columns: 28px minmax(0, 1fr); }
+      .due { grid-column: 2; text-align: left; }
+      .notice { grid-template-columns: 30px minmax(0, 1fr); }
+      .notice .button { width: 100%; }
+      .segment { grid-template-columns: minmax(0, 1fr); }
+      .timestamp { justify-self: start; min-width: 96px; min-height: 44px; }
+      .player-meta span:last-child { width: 100%; margin-left: 0; }
+      .media-button, .transcript-open { flex: 1 1 auto; }
+      .time-readout { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">К основному содержимому</a>
+  <div class="shell">
+    <aside class="side" id="primary-navigation" aria-label="Боковая панель">
+      <div class="brand"><i class="mark" aria-hidden="true"></i><span class="brand-name">Контекст</span></div>
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="active" href="#main-content" aria-label="Встречи, текущая страница" aria-current="page"><span class="nav-glyph" aria-hidden="true">▤</span><span class="nav-label">Встречи</span></a>
+        <a href="#" aria-label="Поиск"><span class="nav-glyph" aria-hidden="true">⌕</span><span class="nav-label">Поиск</span></a>
+        <a href="#" aria-label="Участники"><span class="nav-glyph" aria-hidden="true">♙</span><span class="nav-label">Участники</span></a>
+        <a href="#" aria-label="Профили"><span class="nav-glyph" aria-hidden="true">◫</span><span class="nav-label">Профили</span></a>
+        <a href="#" aria-label="Настройки"><span class="nav-glyph" aria-hidden="true">⚙</span><span class="nav-label">Настройки</span></a>
+      </nav>
+      <div class="local"><strong>● Локальный режим</strong>Данные этой встречи не покидали устройство.</div>
+    </aside>
+
+    <main class="main" id="main-content" tabindex="-1">
+      <header class="top">
+        <button class="button mobile-nav-trigger" type="button" aria-expanded="false" aria-controls="primary-navigation"><span aria-hidden="true">☰</span><span>Меню</span></button>
+        <a class="button back" href="#main-content" aria-label="Назад к библиотеке встреч">←</a>
+        <span class="top-path">Все встречи / 28 августа 2026</span>
+        <div class="top-actions" aria-label="Действия со встречей"><button class="button" type="button">Экспорт встречи</button><button class="button primary" type="button">Изменить встречу</button></div>
+      </header>
+
+      <div class="content">
+        <header class="heading">
+          <div><p class="overline">Встреча</p><h1>Синхронизация релиза и план запуска</h1><div class="meta-line"><span>28 августа 2026, 11:00</span><span>1 ч 18 мин</span><span>Обновлено сегодня в 14:32</span></div></div>
+          <span class="badge">✓ Анализ завершён</span>
+        </header>
+
+        <div class="detail-grid">
+          <section class="card summary" aria-labelledby="summary-title">
+            <h2 class="section-title" id="summary-title">Краткая сводка <small>Создана сегодня, 14:26</small></h2>
+            <p>Команда согласовала выпуск версии 1.0 на 12 сентября после контрольного восстановления резервной копии. До 5 сентября Мария завершает проверку миграций, Илья готовит инструкцию по развёртыванию, а Сергей принимает итоговое решение после проверки.</p>
+            <div class="summary-meta"><span class="chip">готовность релиза</span><span class="chip">миграции</span><span class="chip">резервное копирование</span></div>
+          </section>
+
+          <section class="card agreements" aria-labelledby="agreements-title">
+            <div class="agreements-head"><h2 id="agreements-title">Все договорённости</h2><span class="count">4 пункта</span></div>
+            <article class="agreement important"><span class="agreement-mark" aria-hidden="true">✓</span><div><span class="important-label">! Важная договорённость</span><h3>Выпустить версию 1.0 после контрольного восстановления</h3><p>Финальное решение принимает Сергей после проверки резервной копии.</p><a class="evidence" href="#segment-26-41" aria-label="Открыть подтверждение договорённости «Выпустить версию 1.0 после контрольного восстановления», 26 минут 41 секунда" aria-describedby="evidence-instructions">26:41 · открыть подтверждение</a></div><div class="due">12 сентября</div></article>
+            <article class="agreement"><span class="agreement-mark" aria-hidden="true">✓</span><div><h3>Завершить проверку миграций</h3><p>Ответственная: Мария К. Результат добавить в OPS-241.</p><a class="evidence" href="#segment-34-18" aria-label="Открыть подтверждение договорённости «Завершить проверку миграций», 34 минуты 18 секунд" aria-describedby="evidence-instructions">34:18 · открыть подтверждение</a></div><div class="due">до 5 сентября</div></article>
+            <article class="agreement"><span class="agreement-mark" aria-hidden="true">✓</span><div><h3>Подготовить инструкцию по развёртыванию и откату</h3><p>Ответственный: Илья Л. Описать чистую установку и возврат версии.</p><a class="evidence" href="#segment-48-03" aria-label="Открыть подтверждение договорённости «Подготовить инструкцию по развёртыванию и откату», 48 минут 3 секунды" aria-describedby="evidence-instructions">48:03 · открыть подтверждение</a></div><div class="due">до 8 сентября</div></article>
+            <article class="agreement"><span class="agreement-mark" aria-hidden="true">✓</span><div><h3>Провести короткую проверку перед публикацией</h3><p>Созвон после готовности документации и подтверждения миграций.</p><a class="evidence" href="#segment-64-22" aria-label="Открыть подтверждение договорённости «Провести короткую проверку перед публикацией», 1 час 4 минуты 22 секунды" aria-describedby="evidence-instructions">1:04:22 · открыть подтверждение</a></div><div class="due">10 сентября</div></article>
+          </section>
+
+          <section class="card player" aria-labelledby="player-title">
+            <div class="video-stage" role="img" aria-label="Статичный кадр записи экрана со встречи"><span class="video-label">28 августа · запись экрана</span></div>
+            <div class="media-controls" role="group" aria-label="Управление записью встречи">
+              <div class="control-row"><button class="media-button play-button" type="button" aria-label="Воспроизвести запись встречи">▶ Воспроизвести</button><button class="media-button" type="button" aria-label="Перемотать запись на 10 секунд назад">−10 с</button><button class="media-button" type="button" aria-label="Перемотать запись на 10 секунд вперёд">+10 с</button><span class="time-readout" aria-label="Прошло 26 минут 41 секунда из 1 часа 18 минут 6 секунд">26:41 / 1:18:06</span></div>
+              <label class="seek-label" for="meeting-position">Позиция записи</label>
+              <input class="seek-range" id="meeting-position" type="range" min="0" max="4686" value="1601" aria-valuemin="0" aria-valuemax="4686" aria-valuenow="1601" aria-valuetext="26 минут 41 секунда из 1 часа 18 минут 6 секунд">
+              <div class="control-row"><button class="media-button" type="button" aria-pressed="false" aria-label="Выключить звук">Звук: вкл.</button><button class="media-button" type="button" aria-pressed="true" aria-label="Выключить субтитры; сейчас субтитры включены">Субтитры: вкл.</button><button class="media-button" type="button" aria-label="Открыть видео на весь экран">На весь экран</button><a class="transcript-open" href="#transcript">Открыть расшифровку</a></div>
+              <p class="sr-only" role="status" aria-live="polite" aria-atomic="true">Плеер готов. Субтитры включены. Позиция 26 минут 41 секунда.</p>
+            </div>
+            <div class="player-meta"><strong id="player-title">Запись встречи</strong><span>MP4 · 4,8 ГБ</span><span>Хранится бессрочно</span></div>
+            <p class="parity-note">Для видео и аудио используется один логический набор доступных элементов управления; недоступные субтитры обозначаются текстом.</p>
+          </section>
+
+          <section class="card metadata" aria-labelledby="metadata-title">
+            <h2 class="section-title" id="metadata-title">О встрече <small>Метаданные</small></h2>
+            <div class="fields">
+              <div><span class="field-label">Связанная задача</span><a class="task" id="task-ops-241" href="#task-ops-241">OPS-241 · Подготовить публичный релиз <span aria-hidden="true">↗</span></a></div>
+              <div id="participants"><span class="field-label">Участники</span><div class="chips"><span class="person"><i class="avatar" aria-hidden="true">СА</i>Сергей А.</span><span class="person"><i class="avatar" aria-hidden="true">МК</i>Мария К.</span><span class="person"><i class="avatar" aria-hidden="true">ИЛ</i>Илья Л.</span></div></div>
+              <div><span class="field-label">Теги</span><div class="chips"><span class="chip">релиз</span><span class="chip">инфраструктура</span><span class="chip">Q3</span></div></div>
+            </div>
+          </section>
+
+          <section class="card transcript" id="transcript" aria-labelledby="transcript-title">
+            <h2 class="section-title" id="transcript-title">Расшифровка <small>Текущая версия</small></h2>
+            <p class="evidence-help" id="evidence-instructions">Ссылка подтверждения переводит к конкретному фрагменту. После перехода фрагмент получает фокус, запись перематывается к таймкоду, а статус объявляется без автоматического воспроизведения.</p>
+            <p class="sr-only" id="evidence-status" role="status" aria-live="polite" aria-atomic="true">Подтверждение к договорённости о выпуске версии 1.0, 26 минут 41 секунда, Спикер 1, проверено.</p>
+            <article class="segment current" id="segment-26-41" tabindex="-1" aria-current="true" aria-describedby="evidence-status"><button class="timestamp" type="button" aria-label="Воспроизвести запись с 26 минут 41 секунды">▶ 26:41</button><div><span class="confirmation-marker">Фрагмент подтверждения</span><span class="speaker">Спикер 1 · проверено</span><p>Тогда фиксируем: релиз двенадцатого, если контрольное восстановление проходит без ошибок. Итоговое решение после проверки беру на себя.</p></div></article>
+            <article class="segment" id="segment-34-18" tabindex="-1"><button class="timestamp" type="button" aria-label="Воспроизвести запись с 34 минут 18 секунд">▶ 34:18</button><div><span class="confirmation-marker">Фрагмент подтверждения</span><span class="speaker">Спикер 2 · проверено</span><p>Проверку миграций закончу до пятого сентября и приложу результат к OPS-241.</p></div></article>
+            <article class="segment" id="segment-48-03" tabindex="-1"><button class="timestamp" type="button" aria-label="Воспроизвести запись с 48 минут 3 секунд">▶ 48:03</button><div><span class="confirmation-marker">Фрагмент подтверждения</span><span class="speaker">Спикер 3 · проверено</span><p>К восьмому сентября подготовлю инструкцию: отдельно чистая установка и отдельно безопасный откат версии.</p></div></article>
+            <article class="segment" id="segment-64-22" tabindex="-1"><button class="timestamp" type="button" aria-label="Воспроизвести запись с 1 часа 4 минут 22 секунд">▶ 1:04:22</button><div><span class="confirmation-marker">Фрагмент подтверждения</span><span class="speaker">Спикер 1 · проверено</span><p>Десятого числа проведём короткую проверку, когда документация и подтверждение миграций уже будут готовы.</p></div></article>
+          </section>
+        </div>
+
+        <section class="alternate" aria-labelledby="stale-title">
+          <p class="alternate-label">Альтернативное состояние · устаревшая сводка после правки расшифровки</p>
+          <div class="notice" role="status" aria-live="polite" aria-atomic="true"><span class="notice-sign" aria-hidden="true">!</span><div><strong>Расшифровка изменена. Сводка требует обновления.</strong><p>Текущая сводка создана до правки в 14:28 и остаётся доступной для проверки.</p></div><button class="button primary" type="button">Обновить краткую сводку</button></div>
+          <div class="stale-summary"><h2 id="stale-title">Краткая сводка <span style="color:var(--warning);font-size:12px">! Устарела</span></h2><p>Команда согласовала выпуск версии 1.0 на 12 сентября. Эта версия результата не учитывает последнюю правку расшифровки; переходы к подтверждениям должны сверяться с текущей версией.</p></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

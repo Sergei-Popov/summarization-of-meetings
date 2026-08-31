@@ -1,0 +1,362 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "id": "title", "type": "text", "x": 100, "y": 55, "width": 1380, "height": 45, "angle": 0,
+      "strokeColor": "#1e1e1e", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 101, "version": 1, "versionNonce": 1001, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "a0",
+      "text": "Информационная архитектура · Локальная библиотека встреч", "fontSize": 36, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 37, "containerId": null, "originalText": "Информационная архитектура · Локальная библиотека встреч", "lineHeight": 1.25
+    },
+    {
+      "id": "local-banner", "type": "rectangle", "x": 100, "y": 125, "width": 2920, "height": 70, "angle": 0,
+      "strokeColor": "#495057", "backgroundColor": "#f8f9fa", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 102, "version": 1, "versionNonce": 1002, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "a1"
+    },
+    {
+      "id": "local-banner-text", "type": "text", "x": 130, "y": 145, "width": 2840, "height": 28, "angle": 0,
+      "strokeColor": "#343a40", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 103, "version": 1, "versionNonce": 1003, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "a2",
+      "text": "БЕЗ АВТОРИЗАЦИИ · локальный браузер / loopback     Навигация: Библиотека · Участники · Профили обработки · Настройки и диагностика", "fontSize": 20, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 21, "containerId": null, "originalText": "БЕЗ АВТОРИЗАЦИИ · локальный браузер / loopback     Навигация: Библиотека · Участники · Профили обработки · Настройки и диагностика", "lineHeight": 1.25
+    },
+    {
+      "id": "library", "type": "rectangle", "x": 100, "y": 270, "width": 560, "height": 520, "angle": 0,
+      "strokeColor": "#1971c2", "backgroundColor": "#e7f5ff", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 104, "version": 1, "versionNonce": 1004, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "a3"
+    },
+    {
+      "id": "library-text", "type": "text", "x": 130, "y": 300, "width": 500, "height": 320, "angle": 0,
+      "strokeColor": "#0b4f8a", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 105, "version": 1, "versionNonce": 1005, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "a4",
+      "text": "БИБЛИОТЕКА\n\nВсе сохранённые встречи\n\nПоиск:\n• название, расшифровка, сводка\n• номер внешней задачи\n\nФильтры:\n• дата и статус\n• теги / тематики\n• участники\n\nКарточка: название · дата · длительность\nстатус · изменено · размер на диске", "fontSize": 22, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 300, "containerId": null, "originalText": "БИБЛИОТЕКА\n\nВсе сохранённые встречи\n\nПоиск:\n• название, расшифровка, сводка\n• номер внешней задачи\n\nФильтры:\n• дата и статус\n• теги / тематики\n• участники\n\nКарточка: название · дата · длительность\nстатус · изменено · размер на диске", "lineHeight": 1.25
+    },
+    {
+      "id": "search-hit", "type": "rectangle", "x": 135, "y": 680, "width": 490, "height": 75, "angle": 0,
+      "strokeColor": "#1971c2", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "dashed", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 106, "version": 1, "versionNonce": 1006, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "a5"
+    },
+    {
+      "id": "search-hit-text", "type": "text", "x": 155, "y": 698, "width": 450, "height": 45, "angle": 0,
+      "strokeColor": "#1971c2", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 107, "version": 1, "versionNonce": 1007, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "a6",
+      "text": "Результат поиска: тип совпадения + контекст", "fontSize": 18, "fontFamily": 5, "textAlign": "left", "verticalAlign": "middle", "baseline": 33, "containerId": null, "originalText": "Результат поиска: тип совпадения + контекст", "lineHeight": 1.25
+    },
+    {
+      "id": "import", "type": "rectangle", "x": 850, "y": 270, "width": 500, "height": 400, "angle": 0,
+      "strokeColor": "#e67700", "backgroundColor": "#fff4e6", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 108, "version": 1, "versionNonce": 1008, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "a7"
+    },
+    {
+      "id": "import-text", "type": "text", "x": 880, "y": 300, "width": 440, "height": 335, "angle": 0,
+      "strokeColor": "#9c4f00", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 109, "version": 1, "versionNonce": 1009, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "a8",
+      "text": "ИМПОРТ\n\nВидео или аудио · один файл\nDrag & drop / выбор файла\n\nДо запуска:\n• название и дата\n• профиль обработки\n• язык расшифровки\n\nПроверка файла:\nконтейнер · аудиодорожка · декодирование\nлимиты размера / длительности\n\nОтказ показывает причину;\nВстреча не создаётся частично", "fontSize": 21, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 315, "containerId": null, "originalText": "ИМПОРТ\n\nВидео или аудио · один файл\nDrag & drop / выбор файла\n\nДо запуска:\n• название и дата\n• профиль обработки\n• язык расшифровки\n\nПроверка файла:\nконтейнер · аудиодорожка · декодирование\nлимиты размера / длительности\n\nОтказ показывает причину;\nВстреча не создаётся частично", "lineHeight": 1.25
+    },
+    {
+      "id": "processing", "type": "rectangle", "x": 1540, "y": 270, "width": 510, "height": 400, "angle": 0,
+      "strokeColor": "#e67700", "backgroundColor": "#fff4e6", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 110, "version": 1, "versionNonce": 1010, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "a9"
+    },
+    {
+      "id": "processing-text", "type": "text", "x": 1570, "y": 300, "width": 450, "height": 335, "angle": 0,
+      "strokeColor": "#9c4f00", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 111, "version": 1, "versionNonce": 1011, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aA",
+      "text": "ХОД ОБРАБОТКИ\n\n1  Подготовка аудио\n2  Транскрибация\n3  Суммаризация\n\nСтатус · этап · прошедшее время\nРеальный % или индикатор активности\nОбновление не реже 5 секунд\n\nДействия:\n• отменить (до 10 секунд)\n• продолжить после перезапуска\n• повторить только неуспешный этап\n\nСохранённые результаты не теряются", "fontSize": 21, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 315, "containerId": null, "originalText": "ХОД ОБРАБОТКИ\n\n1  Подготовка аудио\n2  Транскрибация\n3  Суммаризация\n\nСтатус · этап · прошедшее время\nРеальный % или индикатор активности\nОбновление не реже 5 секунд\n\nДействия:\n• отменить (до 10 секунд)\n• продолжить после перезапуска\n• повторить только неуспешный этап\n\nСохранённые результаты не теряются", "lineHeight": 1.25
+    },
+    {
+      "id": "meeting", "type": "rectangle", "x": 2260, "y": 235, "width": 760, "height": 760, "angle": 0,
+      "strokeColor": "#2b8a3e", "backgroundColor": "#ebfbee", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 112, "version": 1, "versionNonce": 1012, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aB"
+    },
+    {
+      "id": "meeting-heading", "type": "text", "x": 2290, "y": 260, "width": 700, "height": 75, "angle": 0,
+      "strokeColor": "#1b6b30", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 113, "version": 1, "versionNonce": 1013, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aC",
+      "text": "СТРАНИЦА ВСТРЕЧИ\nНазвание · дата · теги · участники · внешняя задача", "fontSize": 24, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 65, "containerId": null, "originalText": "СТРАНИЦА ВСТРЕЧИ\nНазвание · дата · теги · участники · внешняя задача", "lineHeight": 1.25
+    },
+    {
+      "id": "player", "type": "rectangle", "x": 2290, "y": 350, "width": 330, "height": 190, "angle": 0,
+      "strokeColor": "#2b8a3e", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 114, "version": 1, "versionNonce": 1014, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aD"
+    },
+    {
+      "id": "player-text", "type": "text", "x": 2315, "y": 380, "width": 280, "height": 125, "angle": 0,
+      "strokeColor": "#1b6b30", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 115, "version": 1, "versionNonce": 1015, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aE",
+      "text": "ПЛЕЕР\nВидео или аудио\n▶  00:00 ━━━━━ 58:42\n\nПереход и запуск\nс выбранного таймкода", "fontSize": 20, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 110, "containerId": null, "originalText": "ПЛЕЕР\nВидео или аудио\n▶  00:00 ━━━━━ 58:42\n\nПереход и запуск\nс выбранного таймкода", "lineHeight": 1.25
+    },
+    {
+      "id": "summary", "type": "rectangle", "x": 2650, "y": 350, "width": 340, "height": 190, "angle": 0,
+      "strokeColor": "#2b8a3e", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 116, "version": 1, "versionNonce": 1016, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aF"
+    },
+    {
+      "id": "summary-text", "type": "text", "x": 2675, "y": 375, "width": 290, "height": 135, "angle": 0,
+      "strokeColor": "#1b6b30", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 117, "version": 1, "versionNonce": 1017, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aG",
+      "text": "КРАТКАЯ СВОДКА\nОбзор · темы\nрешения · открытые вопросы\n\nРедактировать · копировать\nповторно суммаризировать\nэкспортировать", "fontSize": 19, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 120, "containerId": null, "originalText": "КРАТКАЯ СВОДКА\nОбзор · темы\nрешения · открытые вопросы\n\nРедактировать · копировать\nповторно суммаризировать\nэкспортировать", "lineHeight": 1.25
+    },
+    {
+      "id": "agreements", "type": "rectangle", "x": 2290, "y": 575, "width": 330, "height": 300, "angle": 0,
+      "strokeColor": "#2b8a3e", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 118, "version": 1, "versionNonce": 1018, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aH"
+    },
+    {
+      "id": "agreements-text", "type": "text", "x": 2315, "y": 600, "width": 280, "height": 250, "angle": 0,
+      "strokeColor": "#1b6b30", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 119, "version": 1, "versionNonce": 1019, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aI",
+      "text": "ДОГОВОРЁННОСТИ\n\nПолный перечень по пунктам\nВажные — различимы\n\nДля каждой:\n• что решено / задача\n• ответственный (если назван)\n• срок / дата (если названы)\n• evidence + таймкод\n• «подтверждение не найдено»", "fontSize": 19, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 235, "containerId": null, "originalText": "ДОГОВОРЁННОСТИ\n\nПолный перечень по пунктам\nВажные — различимы\n\nДля каждой:\n• что решено / задача\n• ответственный (если назван)\n• срок / дата (если названы)\n• evidence + таймкод\n• «подтверждение не найдено»", "lineHeight": 1.25
+    },
+    {
+      "id": "transcript", "type": "rectangle", "x": 2650, "y": 575, "width": 340, "height": 380, "angle": 0,
+      "strokeColor": "#2b8a3e", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 120, "version": 1, "versionNonce": 1020, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aJ"
+    },
+    {
+      "id": "transcript-text", "type": "text", "x": 2675, "y": 600, "width": 290, "height": 330, "angle": 0,
+      "strokeColor": "#1b6b30", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 121, "version": 1, "versionNonce": 1021, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aK",
+      "text": "РАСШИФРОВКА\n\nСегменты с таймкодами\nНеобязательные метки спикеров\n\n00:14:32  Фрагмент разговора…\n00:15:08  Следующая реплика…\n\nДействия:\n• клик по времени → плеер\n• исправить текст\n• объединить / разделить сегменты\n• переименовать метку спикера\n\nПосле правки сводка: «устарела»", "fontSize": 18, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 315, "containerId": null, "originalText": "РАСШИФРОВКА\n\nСегменты с таймкодами\nНеобязательные метки спикеров\n\n00:14:32  Фрагмент разговора…\n00:15:08  Следующая реплика…\n\nДействия:\n• клик по времени → плеер\n• исправить текст\n• объединить / разделить сегменты\n• переименовать метку спикера\n\nПосле правки сводка: «устарела»", "lineHeight": 1.25
+    },
+    {
+      "id": "participants", "type": "rectangle", "x": 100, "y": 1080, "width": 560, "height": 330, "angle": 0,
+      "strokeColor": "#6741d9", "backgroundColor": "#f3f0ff", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 122, "version": 1, "versionNonce": 1022, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aL"
+    },
+    {
+      "id": "participants-text", "type": "text", "x": 130, "y": 1110, "width": 500, "height": 260, "angle": 0,
+      "strokeColor": "#4c2ca3", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 123, "version": 1, "versionNonce": 1023, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aM",
+      "text": "СПРАВОЧНИК УЧАСТНИКОВ\n\nЛокальный список людей\nСоздать · переименовать · удалить\n\nВыбрать одного или нескольких\nдля конкретной Встречи\n\nИспользовать как фильтр библиотеки\n\nНе связан с репликами, speaker labels\nили доступом к приложению", "fontSize": 21, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 245, "containerId": null, "originalText": "СПРАВОЧНИК УЧАСТНИКОВ\n\nЛокальный список людей\nСоздать · переименовать · удалить\n\nВыбрать одного или нескольких\nдля конкретной Встречи\n\nИспользовать как фильтр библиотеки\n\nНе связан с репликами, speaker labels\nили доступом к приложению", "lineHeight": 1.25
+    },
+    {
+      "id": "profiles", "type": "rectangle", "x": 850, "y": 1080, "width": 500, "height": 430, "angle": 0,
+      "strokeColor": "#6741d9", "backgroundColor": "#f3f0ff", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 124, "version": 1, "versionNonce": 1024, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aN"
+    },
+    {
+      "id": "profiles-text", "type": "text", "x": 880, "y": 1110, "width": 440, "height": 365, "angle": 0,
+      "strokeColor": "#4c2ca3", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 125, "version": 1, "versionNonce": 1025, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aO",
+      "text": "ПРОФИЛИ ОБРАБОТКИ\n\nДва независимых этапа:\nТранскрибация  local / provider\nСуммаризация   local / provider\n\nДля provider отдельно:\nendpoint · model · ключ на сессию\nпроверка соединения / совместимости\n\nДля local:\nготовность моделей · память · загрузка\n\nЯзык сводки · инструкции\nСброс инструкций к встроенным\n\nНикакого скрытого fallback", "fontSize": 20, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 350, "containerId": null, "originalText": "ПРОФИЛИ ОБРАБОТКИ\n\nДва независимых этапа:\nТранскрибация  local / provider\nСуммаризация   local / provider\n\nДля provider отдельно:\nendpoint · model · ключ на сессию\nпроверка соединения / совместимости\n\nДля local:\nготовность моделей · память · загрузка\n\nЯзык сводки · инструкции\nСброс инструкций к встроенным\n\nНикакого скрытого fallback", "lineHeight": 1.25
+    },
+    {
+      "id": "settings", "type": "rectangle", "x": 1540, "y": 1080, "width": 510, "height": 430, "angle": 0,
+      "strokeColor": "#6741d9", "backgroundColor": "#f3f0ff", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 126, "version": 1, "versionNonce": 1026, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aP"
+    },
+    {
+      "id": "settings-text", "type": "text", "x": 1570, "y": 1110, "width": 450, "height": 360, "angle": 0,
+      "strokeColor": "#4c2ca3", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 127, "version": 1, "versionNonce": 1027, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aQ",
+      "text": "НАСТРОЙКИ / ДИАГНОСТИКА\n\nЛокальное хранилище:\nзанято встречами и моделями\n\nМодели и ресурсы:\nготовность · загрузка · требования\nнагрузка текущей обработки\n\nДиагностика:\nэтап · безопасный код ошибки\nтехнические метаданные\nбез ключей, полной расшифровки и сводки\n\nСостояние локального приложения", "fontSize": 20, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 345, "containerId": null, "originalText": "НАСТРОЙКИ / ДИАГНОСТИКА\n\nЛокальное хранилище:\nзанято встречами и моделями\n\nМодели и ресурсы:\nготовность · загрузка · требования\nнагрузка текущей обработки\n\nДиагностика:\nэтап · безопасный код ошибки\nтехнические метаданные\nбез ключей, полной расшифровки и сводки\n\nСостояние локального приложения", "lineHeight": 1.25
+    },
+    {
+      "id": "delete-modal", "type": "rectangle", "x": 2280, "y": 1120, "width": 340, "height": 320, "angle": 0,
+      "strokeColor": "#c92a2a", "backgroundColor": "#fff5f5", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 128, "version": 1, "versionNonce": 1028, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aR"
+    },
+    {
+      "id": "delete-modal-text", "type": "text", "x": 2310, "y": 1150, "width": 280, "height": 260, "angle": 0,
+      "strokeColor": "#a61e1e", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 129, "version": 1, "versionNonce": 1029, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aS",
+      "text": "MODAL · УДАЛЕНИЕ\n\nВариант 1:\nудалить исходную запись,\nсохранить текстовые результаты\n\nВариант 2:\nполностью удалить Встречу\n\nПеречислить все материалы\nи объём; явное подтверждение", "fontSize": 19, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 245, "containerId": null, "originalText": "MODAL · УДАЛЕНИЕ\n\nВариант 1:\nудалить исходную запись,\nсохранить текстовые результаты\n\nВариант 2:\nполностью удалить Встречу\n\nПеречислить все материалы\nи объём; явное подтверждение", "lineHeight": 1.25
+    },
+    {
+      "id": "consent-modal", "type": "rectangle", "x": 2660, "y": 1120, "width": 360, "height": 390, "angle": 0,
+      "strokeColor": "#f08c00", "backgroundColor": "#fff9db", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 130, "version": 1, "versionNonce": 1030, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aT"
+    },
+    {
+      "id": "consent-modal-text", "type": "text", "x": 2690, "y": 1150, "width": 300, "height": 330, "angle": 0,
+      "strokeColor": "#a65f00", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 131, "version": 1, "versionNonce": 1031, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aU",
+      "text": "MODAL · ВНЕШНИЙ ПРОВАЙДЕР\n\nПеред конкретным этапом:\n• провайдер / endpoint / модель\n• что уйдёт: подготовленное аудио\n  ИЛИ текущая расшифровка\n• ключ действует только в сессии\n\n[ Подтверждаю отправку ]\n\nНовое согласие при изменении\nэтапа, модели, endpoint, данных\nили snapshot задания", "fontSize": 18, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 315, "containerId": null, "originalText": "MODAL · ВНЕШНИЙ ПРОВАЙДЕР\n\nПеред конкретным этапом:\n• провайдер / endpoint / модель\n• что уйдёт: подготовленное аудио\n  ИЛИ текущая расшифровка\n• ключ действует только в сессии\n\n[ Подтверждаю отправку ]\n\nНовое согласие при изменении\nэтапа, модели, endpoint, данных\nили snapshot задания", "lineHeight": 1.25
+    },
+    {
+      "id": "task-modal", "type": "rectangle", "x": 2280, "y": 1545, "width": 740, "height": 190, "angle": 0,
+      "strokeColor": "#1971c2", "backgroundColor": "#e7f5ff", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 3}, "seed": 132, "version": 1, "versionNonce": 1032, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aV"
+    },
+    {
+      "id": "task-modal-text", "type": "text", "x": 2310, "y": 1575, "width": 680, "height": 130, "angle": 0,
+      "strokeColor": "#0b4f8a", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 133, "version": 1, "versionNonce": 1033, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aW",
+      "text": "MODAL · СВЯЗЬ С ЗАДАЧЕЙ\nВнешний URL  [ https://tracker.example/TASK-123 ]\nНомер задачи извлечён: TASK-123  [ изменить вручную ]\nСохранённый номер индексируется для поиска · интеграции с tracker нет", "fontSize": 19, "fontFamily": 5, "textAlign": "left", "verticalAlign": "top", "baseline": 115, "containerId": null, "originalText": "MODAL · СВЯЗЬ С ЗАДАЧЕЙ\nВнешний URL  [ https://tracker.example/TASK-123 ]\nНомер задачи извлечён: TASK-123  [ изменить вручную ]\nСохранённый номер индексируется для поиска · интеграции с tracker нет", "lineHeight": 1.25
+    },
+    {
+      "id": "library-import-arrow", "type": "arrow", "x": 665, "y": 420, "width": 175, "height": 0, "angle": 0,
+      "strokeColor": "#495057", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 134, "version": 1, "versionNonce": 1034, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aX",
+      "points": [[0, 0], [175, 0]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "library-import-label", "type": "text", "x": 685, "y": 382, "width": 140, "height": 25, "angle": 0,
+      "strokeColor": "#495057", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 135, "version": 1, "versionNonce": 1035, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aY",
+      "text": "+ Новая встреча", "fontSize": 17, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 20, "containerId": null, "originalText": "+ Новая встреча", "lineHeight": 1.25
+    },
+    {
+      "id": "import-processing-arrow", "type": "arrow", "x": 1355, "y": 420, "width": 175, "height": 0, "angle": 0,
+      "strokeColor": "#495057", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 136, "version": 1, "versionNonce": 1036, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "aZ",
+      "points": [[0, 0], [175, 0]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "import-processing-label", "type": "text", "x": 1380, "y": 382, "width": 125, "height": 25, "angle": 0,
+      "strokeColor": "#495057", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 137, "version": 1, "versionNonce": 1037, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "b0",
+      "text": "Начать анализ", "fontSize": 17, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 20, "containerId": null, "originalText": "Начать анализ", "lineHeight": 1.25
+    },
+    {
+      "id": "processing-meeting-arrow", "type": "arrow", "x": 2055, "y": 420, "width": 195, "height": 0, "angle": 0,
+      "strokeColor": "#495057", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 138, "version": 1, "versionNonce": 1038, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "b1",
+      "points": [[0, 0], [195, 0]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "processing-meeting-label", "type": "text", "x": 2070, "y": 382, "width": 165, "height": 25, "angle": 0,
+      "strokeColor": "#495057", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 139, "version": 1, "versionNonce": 1039, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "b2",
+      "text": "Результат готов", "fontSize": 17, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 20, "containerId": null, "originalText": "Результат готов", "lineHeight": 1.25
+    },
+    {
+      "id": "library-meeting-arrow", "type": "arrow", "x": 655, "y": 790, "width": 1595, "height": 160, "angle": 0,
+      "strokeColor": "#1971c2", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 140, "version": 1, "versionNonce": 1040, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "b3",
+      "points": [[0, 0], [650, 160], [1260, 160], [1595, 75]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "library-meeting-label", "type": "text", "x": 1260, "y": 918, "width": 250, "height": 25, "angle": 0,
+      "strokeColor": "#1971c2", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 141, "version": 1, "versionNonce": 1041, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "b4",
+      "text": "Открыть сохранённую встречу", "fontSize": 17, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 20, "containerId": null, "originalText": "Открыть сохранённую встречу", "lineHeight": 1.25
+    },
+    {
+      "id": "search-transcript-arrow", "type": "arrow", "x": 625, "y": 720, "width": 2020, "height": 40, "angle": 0,
+      "strokeColor": "#1971c2", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 3, "strokeStyle": "dashed", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 142, "version": 1, "versionNonce": 1042, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "b5",
+      "points": [[0, 0], [850, -40], [1600, 0], [2020, 0]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "search-transcript-label", "type": "text", "x": 1390, "y": 650, "width": 340, "height": 25, "angle": 0,
+      "strokeColor": "#1971c2", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 143, "version": 1, "versionNonce": 1043, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "b6",
+      "text": "Поиск → точное совпадение внутри Встречи", "fontSize": 17, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 20, "containerId": null, "originalText": "Поиск → точное совпадение внутри Встречи", "lineHeight": 1.25
+    },
+    {
+      "id": "summary-player-arrow", "type": "arrow", "x": 2645, "y": 435, "width": 20, "height": 0, "angle": 0,
+      "strokeColor": "#2b8a3e", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 144, "version": 1, "versionNonce": 1044, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "b7",
+      "points": [[0, 0], [-20, 0]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "summary-player-label", "type": "text", "x": 2515, "y": 405, "width": 230, "height": 25, "angle": 0,
+      "strokeColor": "#2b8a3e", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 145, "version": 1, "versionNonce": 1045, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "b8",
+      "text": "evidence / таймкод", "fontSize": 15, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 18, "containerId": null, "originalText": "evidence / таймкод", "lineHeight": 1.25
+    },
+    {
+      "id": "agreements-transcript-arrow", "type": "arrow", "x": 2625, "y": 725, "width": 20, "height": 0, "angle": 0,
+      "strokeColor": "#2b8a3e", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 146, "version": 1, "versionNonce": 1046, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "b9",
+      "points": [[0, 0], [20, 0]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "agreements-transcript-label", "type": "text", "x": 2515, "y": 690, "width": 240, "height": 25, "angle": 0,
+      "strokeColor": "#2b8a3e", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 147, "version": 1, "versionNonce": 1047, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bA",
+      "text": "к подтверждающему сегменту", "fontSize": 15, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 18, "containerId": null, "originalText": "к подтверждающему сегменту", "lineHeight": 1.25
+    },
+    {
+      "id": "meeting-task-arrow", "type": "arrow", "x": 2860, "y": 1000, "width": 0, "height": 535, "angle": 0,
+      "strokeColor": "#1971c2", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 148, "version": 1, "versionNonce": 1048, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bB",
+      "points": [[0, 0], [0, 535]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "meeting-task-label", "type": "text", "x": 2880, "y": 1495, "width": 145, "height": 25, "angle": 0,
+      "strokeColor": "#1971c2", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 149, "version": 1, "versionNonce": 1049, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bC",
+      "text": "Изменить задачу", "fontSize": 16, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 19, "containerId": null, "originalText": "Изменить задачу", "lineHeight": 1.25
+    },
+    {
+      "id": "meeting-delete-arrow", "type": "arrow", "x": 2410, "y": 1000, "width": 0, "height": 110, "angle": 0,
+      "strokeColor": "#c92a2a", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 150, "version": 1, "versionNonce": 1050, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bD",
+      "points": [[0, 0], [0, 110]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "meeting-delete-label", "type": "text", "x": 2425, "y": 1035, "width": 145, "height": 25, "angle": 0,
+      "strokeColor": "#c92a2a", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 151, "version": 1, "versionNonce": 1051, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bE",
+      "text": "Удалить…", "fontSize": 16, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 19, "containerId": null, "originalText": "Удалить…", "lineHeight": 1.25
+    },
+    {
+      "id": "profiles-consent-arrow", "type": "arrow", "x": 1355, "y": 1320, "width": 1295, "height": 0, "angle": 0,
+      "strokeColor": "#f08c00", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 152, "version": 1, "versionNonce": 1052, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bF",
+      "points": [[0, 0], [1295, 0]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "profiles-consent-label", "type": "text", "x": 2025, "y": 1282, "width": 330, "height": 25, "angle": 0,
+      "strokeColor": "#a65f00", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 153, "version": 1, "versionNonce": 1053, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bG",
+      "text": "Первое / изменённое внешнее выполнение", "fontSize": 16, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 19, "containerId": null, "originalText": "Первое / изменённое внешнее выполнение", "lineHeight": 1.25
+    },
+    {
+      "id": "nav-participants-arrow", "type": "arrow", "x": 375, "y": 795, "width": 0, "height": 275, "angle": 0,
+      "strokeColor": "#6741d9", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "dotted", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 154, "version": 1, "versionNonce": 1054, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bH",
+      "points": [[0, 0], [0, 275]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "nav-participants-label", "type": "text", "x": 390, "y": 945, "width": 185, "height": 25, "angle": 0,
+      "strokeColor": "#6741d9", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 155, "version": 1, "versionNonce": 1055, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bI",
+      "text": "Навигация / фильтр", "fontSize": 16, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 19, "containerId": null, "originalText": "Навигация / фильтр", "lineHeight": 1.25
+    },
+    {
+      "id": "nav-profiles-arrow", "type": "arrow", "x": 1095, "y": 675, "width": 0, "height": 395, "angle": 0,
+      "strokeColor": "#6741d9", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "dotted", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 156, "version": 1, "versionNonce": 1056, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bJ",
+      "points": [[0, 0], [0, 395]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "nav-profiles-label", "type": "text", "x": 1110, "y": 980, "width": 190, "height": 25, "angle": 0,
+      "strokeColor": "#6741d9", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 157, "version": 1, "versionNonce": 1057, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bK",
+      "text": "Выбор / настройка", "fontSize": 16, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 19, "containerId": null, "originalText": "Выбор / настройка", "lineHeight": 1.25
+    },
+    {
+      "id": "nav-settings-arrow", "type": "arrow", "x": 1795, "y": 675, "width": 0, "height": 395, "angle": 0,
+      "strokeColor": "#6741d9", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "dotted", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 158, "version": 1, "versionNonce": 1058, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bL",
+      "points": [[0, 0], [0, 395]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "nav-settings-label", "type": "text", "x": 1810, "y": 980, "width": 190, "height": 25, "angle": 0,
+      "strokeColor": "#6741d9", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 159, "version": 1, "versionNonce": 1059, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bM",
+      "text": "Состояние системы", "fontSize": 16, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 19, "containerId": null, "originalText": "Состояние системы", "lineHeight": 1.25
+    },
+    {
+      "id": "consent-processing-arrow", "type": "arrow", "x": 2835, "y": 1110, "width": 790, "height": 430, "angle": 0,
+      "strokeColor": "#f08c00", "backgroundColor": "transparent", "fillStyle": "solid", "strokeWidth": 2, "strokeStyle": "dashed", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": {"type": 2}, "seed": 160, "version": 1, "versionNonce": 1060, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bN",
+      "points": [[0, 0], [-50, -240], [-790, -430]], "lastCommittedPoint": null, "startBinding": null, "endBinding": null, "startArrowhead": null, "endArrowhead": "arrow", "elbowed": false
+    },
+    {
+      "id": "consent-processing-label", "type": "text", "x": 2200, "y": 780, "width": 260, "height": 50, "angle": 0,
+      "strokeColor": "#a65f00", "backgroundColor": "#ffffff", "fillStyle": "solid", "strokeWidth": 1, "strokeStyle": "solid", "roughness": 0, "opacity": 100,
+      "groupIds": [], "frameId": null, "roundness": null, "seed": 161, "version": 1, "versionNonce": 1061, "isDeleted": false, "boundElements": null, "updated": 1788210000000, "link": null, "locked": false, "index": "bO",
+      "text": "Подтверждение → выполнить\nтолько выбранный provider-этап", "fontSize": 16, "fontFamily": 5, "textAlign": "center", "verticalAlign": "top", "baseline": 43, "containerId": null, "originalText": "Подтверждение → выполнить\nтолько выбранный provider-этап", "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}

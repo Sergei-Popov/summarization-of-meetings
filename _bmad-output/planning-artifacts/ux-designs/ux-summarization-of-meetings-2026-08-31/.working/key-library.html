@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контекст — библиотека встреч</title>
+  <style>
+    /*
+      Governing spines:
+      DESIGN.md — Brand & Style; Colors; Typography; Layout & Spacing; Components:
+      app-shell, primary-button, secondary-button, search-field, filter-bar,
+      meeting-row, status-badge, tag-chip, participant-chip, task-link-card.
+      EXPERIENCE.md — Information Architecture: Библиотека/Поиск;
+      Component Patterns: app-shell, meeting-row, search-field, filter-bar, tag-chip,
+      participant-chip, task-link-card; State Patterns: Библиотека populated/paginated;
+      Interaction Primitives; Responsive & Platform; Key Flows 1, 2, 5 and 8.
+    */
+    :root{--base:#F5F7F6;--raised:#FFFFFF;--subtle:#EEF3F1;--ink:#162C2A;--secondary:#55706D;--muted:#5E7471;--border:#D8E2DF;--strong:#B8CBC6;--control-border:#708781;--accent:#126E65;--accent-hover:#0D5B53;--accent-soft:#E8F4F1;--on-accent:#FFFFFF;--success:#287A4B;--success-soft:#E9F6EE;--warning:#A85D19;--warning-soft:#FFF4E7;--danger:#B33A3A;--focus:#0B6DF1;--r-sm:6px;--r-md:8px;--r-lg:12px;--r-full:9999px;--shadow:0 4px 16px rgba(22,44,42,.04)}
+    *{box-sizing:border-box} body{margin:0;background:var(--base);color:var(--ink);font:15px/1.6 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif} button,input,a{font:inherit} button,a{cursor:pointer} a{color:inherit} :focus-visible{outline:3px solid var(--focus);outline-offset:3px}.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.skip-link{position:fixed;z-index:20;top:8px;left:8px;min-height:44px;padding:10px 14px;border:1px solid var(--control-border);border-radius:var(--r-md);background:var(--raised);transform:translateY(-150%);text-decoration:none}.skip-link:focus{transform:translateY(0)}.shell{display:grid;grid-template-columns:216px minmax(0,1fr);min-height:100vh}.side{display:flex;flex-direction:column;padding:20px 14px;border-right:1px solid var(--border);background:var(--subtle)}.brand{display:flex;align-items:center;min-height:44px;padding:0 10px 16px;font-weight:800}.brand-mark{width:26px;height:26px;margin-right:9px;border-radius:8px 8px 8px 2px;background:var(--accent)}.nav{display:grid;gap:4px}.nav a{display:flex;align-items:center;gap:10px;min-width:44px;min-height:44px;padding:0 11px;border-radius:var(--r-md);color:var(--secondary);font-weight:650;text-decoration:none}.nav a[aria-current="page"]{color:var(--accent);background:var(--raised);box-shadow:inset 0 0 0 1px var(--control-border)}.glyph{display:grid;width:20px;place-items:center}.local{margin-top:auto;padding:12px;border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(255,255,255,.6);color:var(--secondary);font-size:12px}.local strong{display:block;color:var(--ink)}.main{min-width:0}.top{display:flex;align-items:center;gap:10px;min-height:65px;padding:0 24px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.82)}.top strong{font-size:13px}.mobile-nav-trigger{display:none;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 12px;border:1px solid var(--control-border);border-radius:var(--r-md);background:var(--raised);color:var(--ink);font-weight:700}.content{max-width:1200px;margin:auto;padding:32px 24px 48px}.heading{display:flex;align-items:flex-start;gap:24px;margin-bottom:24px}.heading h1{margin:0 0 5px;font-size:28px;line-height:1.2;letter-spacing:-.02em}.heading p{margin:0;color:var(--secondary)}.button{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 16px;border-radius:var(--r-md);font-size:13px;font-weight:700;text-decoration:none}.primary{margin-left:auto;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent)}.primary:hover{background:var(--accent-hover)}.secondary-button{border:1px solid var(--control-border);background:var(--raised);color:var(--ink)}.search-row{display:grid;grid-template-columns:minmax(300px,1fr) auto;gap:12px}.search-wrap{position:relative}.search-wrap label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.search{width:100%;min-height:48px;padding:0 15px 0 44px;border:1px solid var(--control-border);border-radius:var(--r-md);background:var(--raised);color:var(--ink)}.search-icon{position:absolute;left:15px;top:11px;color:var(--secondary)}.filter-bar{margin-top:12px;padding:14px;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--subtle)}.filters{display:flex;flex-wrap:wrap;gap:8px}.filter{display:inline-flex;align-items:center;min-width:44px;min-height:44px;padding:0 12px;border:1px solid var(--control-border);border-radius:var(--r-md);background:var(--raised);color:var(--ink);font-size:13px;font-weight:650}.filter strong{margin-left:6px;color:var(--accent)}.active-line{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);color:var(--secondary);font-size:12px}.chip{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border:1px solid var(--border);border-radius:var(--r-full);background:var(--raised);color:var(--ink);font-weight:650}.clear{display:inline-flex;align-items:center;min-width:44px;min-height:44px;margin-left:auto;border:0;background:transparent;color:var(--accent);font-weight:700}.results-head{display:flex;align-items:center;margin:24px 0 12px}.results-head h2{margin:0;font-size:18px;line-height:1.35}.results-head span{margin-left:8px;color:var(--secondary);font-size:13px}.meeting-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}.meeting-row{display:grid;grid-template-columns:minmax(260px,1.35fr) minmax(210px,.8fr) minmax(210px,.75fr);gap:18px;align-items:center;padding:17px 18px;border:1px solid var(--border);border-radius:var(--r-lg);background:var(--raised);box-shadow:var(--shadow)}.meeting-row:focus-within,.meeting-row:hover{border-color:var(--control-border)}.meeting-title{min-width:0}.meeting-title h3{margin:0;font-size:15px}.meeting-link{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-weight:750;text-decoration-thickness:1px;text-underline-offset:3px}.meeting-title p{display:-webkit-box;overflow:hidden;margin:0;color:var(--secondary);font-size:13px;line-height:1.45;-webkit-line-clamp:2;-webkit-box-orient:vertical}.meta{color:var(--secondary);font-size:12px}.meta strong{display:block;color:var(--ink);font-size:13px}.status{display:inline-flex;align-items:center;min-height:30px;padding:0 10px;border-radius:var(--r-full);font-size:12px;font-weight:750}.done{background:var(--success-soft);color:var(--success)}.working{background:var(--accent-soft);color:var(--accent)}.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}.tag{display:inline-flex;align-items:center;min-height:28px;padding:0 8px;border:1px solid var(--border);border-radius:var(--r-full);background:var(--subtle);font-size:11px;font-weight:650}.participants{margin-top:5px;color:var(--secondary);font-size:12px}.row-actions{display:flex;flex-wrap:wrap;align-items:center;gap:6px}.task{display:inline-flex;align-items:center;min-width:44px;min-height:44px;color:var(--accent);font-weight:750}.pagination{display:flex;align-items:center;justify-content:space-between;margin-top:18px;color:var(--secondary);font-size:12px}.page-actions{display:flex;gap:8px}.page-actions .button{min-width:44px;padding:0 12px}
+    @media(max-width:1050px){.shell{grid-template-columns:64px minmax(0,1fr)}.side{padding-inline:8px}.brand{justify-content:center;padding-inline:0}.brand-mark{margin:0}.brand span,.nav span,.local{display:none}.nav a{justify-content:center;padding:0}.meeting-row{grid-template-columns:minmax(240px,1fr) minmax(190px,.7fr)}.row-extra{grid-column:1/-1}}
+    @media(max-width:899px){.shell{display:block}.side{display:none}.top{min-height:58px;padding:0 16px}.mobile-nav-trigger{display:inline-flex}.content{padding:22px 16px 40px}.heading{align-items:center}.search-row{grid-template-columns:1fr}.search-row .secondary-button{width:100%}.filters{display:grid;grid-template-columns:1fr 1fr}.filter{justify-content:space-between}.meeting-row{grid-template-columns:1fr;gap:10px}.meeting-row .meta,.meeting-row .row-extra{grid-column:1}.pagination{align-items:flex-start;gap:12px}}
+    @media(max-width:560px){.heading{display:block}.primary{width:100%;margin:16px 0 0}.filters{grid-template-columns:1fr}.active-line{align-items:flex-start}.clear{width:100%;justify-content:flex-start;margin:0}.meeting-row{padding:15px}.pagination{display:grid}.page-actions{width:100%}.page-actions .button{flex:1}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">К основному содержимому</a>
+  <div class="shell">
+    <aside class="side" id="primary-navigation-panel">
+      <div class="brand"><i class="brand-mark" aria-hidden="true"></i><span>Контекст</span></div>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#" aria-label="Встречи" aria-current="page"><b class="glyph" aria-hidden="true">▤</b><span>Встречи</span></a>
+        <a href="#" aria-label="Поиск"><b class="glyph" aria-hidden="true">⌕</b><span>Поиск</span></a>
+        <a href="#" aria-label="Участники"><b class="glyph" aria-hidden="true">♙</b><span>Участники</span></a>
+        <a href="#" aria-label="Профили"><b class="glyph" aria-hidden="true">◫</b><span>Профили</span></a>
+        <a href="#" aria-label="Настройки"><b class="glyph" aria-hidden="true">⚙</b><span>Настройки</span></a>
+      </nav>
+      <div class="local"><strong>● Локальное приложение готово</strong>Библиотека и поиск работают на этом устройстве.</div>
+    </aside>
+    <main class="main" id="main-content" tabindex="-1">
+      <header class="top">
+        <button class="mobile-nav-trigger" type="button" aria-expanded="false" aria-controls="primary-navigation-panel" aria-describedby="mobile-nav-behavior">☰ Меню</button>
+        <strong>Встречи</strong>
+        <span class="sr-only" id="mobile-nav-behavior">На узкой ширине кнопка открывает навигацию поверх страницы, переносит фокус на первую ссылку и делает фон недоступным. Escape закрывает меню и возвращает фокус на эту кнопку. Навигация остаётся доступной при увеличении масштаба.</span>
+      </header>
+      <div class="content">
+        <div class="heading">
+          <div><h1>Библиотека встреч</h1><p>Все записи хранятся локально, пока вы их не удалите.</p></div>
+          <a class="button primary" href="#">＋ Новая встреча</a>
+        </div>
+        <section aria-label="Поиск и фильтры">
+          <div class="search-row">
+            <div class="search-wrap"><label for="search">Поиск по встречам</label><span class="search-icon" aria-hidden="true">⌕</span><input class="search" id="search" value="OPS" readonly aria-describedby="search-help"></div>
+            <button class="button secondary-button" type="button">Искать</button>
+          </div>
+          <p id="search-help" style="margin:6px 0 0;color:var(--secondary);font-size:12px">Локальный поиск по названию, сводке, расшифровке и номеру задачи.</p>
+          <div class="filter-bar">
+            <div class="filters">
+              <button class="filter" type="button" aria-expanded="false" aria-controls="filter-date-panel">Дата <strong>Выбрано: август 2026</strong> <span aria-hidden="true">⌄</span></button>
+              <button class="filter" type="button" aria-expanded="false" aria-controls="filter-status-panel">Статус <strong>Выбрано: завершено</strong> <span aria-hidden="true">⌄</span></button>
+              <button class="filter" type="button" aria-expanded="false" aria-controls="filter-tags-panel">Теги <strong>Выбрано: релиз</strong> <span aria-hidden="true">⌄</span></button>
+              <button class="filter" type="button" aria-expanded="false" aria-controls="filter-participants-panel">Участники <strong>Выбрано: Мария К.</strong> <span aria-hidden="true">⌄</span></button>
+            </div>
+            <div id="filter-date-panel" hidden>Панель выбора даты</div>
+            <div id="filter-status-panel" hidden>Панель выбора статуса</div>
+            <div id="filter-tags-panel" hidden>Панель выбора тегов</div>
+            <div id="filter-participants-panel" hidden>Панель выбора участников</div>
+            <div class="active-line"><span>Активные фильтры:</span><span class="chip">1–31 августа 2026</span><span class="chip">✓ Завершено</span><span class="chip"># релиз</span><span class="chip">МК · Мария К.</span><button class="clear" type="button">Сбросить все фильтры</button></div>
+          </div>
+        </section>
+        <div class="results-head"><h2>Найденные встречи</h2><span>3 результата · совпадение «OPS» в номере задачи</span></div>
+        <ul class="meeting-list" aria-label="Встречи">
+          <li class="meeting-row">
+            <div class="meeting-title"><h3><a class="meeting-link" href="#">Синхронизация релиза и план запуска</a></h3><p>Совпадение в связанной задаче: OPS-241 · Подготовить публичный релиз</p><div class="tags"><span class="tag">релиз</span><span class="tag">инфраструктура</span><span class="tag">Q3</span></div></div>
+            <div class="meta"><strong>28 августа 2026, 11:00</strong>1 ч 18 мин · видео<div class="participants">Сергей А., Мария К., Илья Л.</div></div>
+            <div class="row-extra"><span class="status done">✓ Анализ завершён</span><div class="meta" style="margin-top:6px">Изменено сегодня, 14:32 · 4,8 ГБ</div><div class="row-actions"><a class="task" href="#" aria-label="Открыть внешнюю задачу OPS-241">Открыть OPS-241</a></div></div>
+          </li>
+          <li class="meeting-row">
+            <div class="meeting-title"><h3><a class="meeting-link" href="#">Проверка миграций перед выпуском 1.0</a></h3><p>Связанная задача: OPS-248 · Проверить схему миграции данных</p><div class="tags"><span class="tag">релиз</span><span class="tag">миграции</span></div></div>
+            <div class="meta"><strong>21 августа 2026, 16:30</strong>46 мин · видео<div class="participants">Мария К., Сергей А.</div></div>
+            <div class="row-extra"><span class="status done">✓ Анализ завершён</span><div class="meta" style="margin-top:6px">Изменено 21 августа · 2,1 ГБ</div><div class="row-actions"><a class="task" href="#" aria-label="Открыть внешнюю задачу OPS-248">Открыть OPS-248</a></div></div>
+          </li>
+          <li class="meeting-row">
+            <div class="meeting-title"><h3><a class="meeting-link" href="#">Репетиция восстановления резервной копии</a></h3><p>Связанная задача: OPS-253 · Провести контрольное восстановление</p><div class="tags"><span class="tag">релиз</span><span class="tag">резервное копирование</span></div></div>
+            <div class="meta"><strong>14 августа 2026, 10:00</strong>52 мин · аудио<div class="participants">Сергей А., Мария К., Алексей П.</div></div>
+            <div class="row-extra"><span class="status done">✓ Анализ завершён</span><div class="meta" style="margin-top:6px">Изменено 14 августа · 684 МБ</div><div class="row-actions"><a class="task" href="#" aria-label="Открыть внешнюю задачу OPS-253">Открыть OPS-253</a></div></div>
+          </li>
+        </ul>
+        <div class="pagination"><span>Показано 1–3 из 3</span><div class="page-actions"><button class="button secondary-button" type="button" disabled aria-disabled="true">← Назад</button><button class="button secondary-button" type="button" disabled aria-disabled="true">Далее →</button></div></div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

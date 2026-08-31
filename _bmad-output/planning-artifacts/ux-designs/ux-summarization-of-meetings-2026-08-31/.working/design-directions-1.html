@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Визуальные направления — страница встречи</title>
+  <style>
+    :root {
+      --page-bg: #edece8;
+      --page-ink: #20211f;
+      --page-muted: #686962;
+      --page-line: #d3d1ca;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body {
+      margin: 0;
+      color: var(--page-ink);
+      background: var(--page-bg);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    button, a { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; }
+    :focus-visible {
+      outline: 3px solid #0b6df1;
+      outline-offset: 3px;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .page-head {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 48px 32px 28px;
+    }
+    .page-kicker {
+      margin: 0 0 8px;
+      color: var(--page-muted);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .page-head h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1.03;
+      letter-spacing: -.045em;
+    }
+    .page-head > p:last-child {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--page-muted);
+      font-size: 17px;
+    }
+    .direction {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 34px 32px 76px;
+      border-top: 1px solid var(--page-line);
+    }
+    .direction-intro {
+      display: grid;
+      grid-template-columns: minmax(240px, .7fr) minmax(360px, 1.3fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+    .direction-label {
+      margin: 0 0 4px;
+      color: var(--page-muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .direction-intro h2 {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+    .rationale { margin: 0; color: #52534e; font-size: 16px; }
+    .browser {
+      overflow: hidden;
+      border: 1px solid #b8b7b2;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(28, 28, 24, .12);
+    }
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 14px;
+      border-bottom: 1px solid rgba(127, 127, 127, .25);
+      background: #f7f7f5;
+      color: #656660;
+    }
+    .dots { display: flex; gap: 7px; }
+    .dots i { width: 10px; height: 10px; border-radius: 50%; background: #bdbdb9; }
+    .address {
+      min-width: 230px;
+      margin: 0 auto;
+      padding: 4px 14px;
+      border: 1px solid #dfdfdc;
+      border-radius: 7px;
+      background: #fff;
+      text-align: center;
+      font-size: 11px;
+    }
+    .browser-spacer { width: 52px; }
+    .app-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 15px;
+      border: 0;
+      border-radius: 9px;
+      background: transparent;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .icon-button { width: 44px; padding: 0; }
+    .glyph {
+      display: inline-grid;
+      width: 20px;
+      height: 20px;
+      place-items: center;
+      font-size: 16px;
+      line-height: 1;
+    }
+    .player-art {
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+      background:
+        linear-gradient(120deg, rgba(0,0,0,.18), rgba(0,0,0,.02)),
+        repeating-linear-gradient(90deg, transparent 0 13%, rgba(255,255,255,.035) 13% 13.5%),
+        #303a43;
+      color: #fff;
+    }
+    .player-art::before {
+      content: "";
+      position: absolute;
+      inset: 18% 8% 25%;
+      border: 1px solid rgba(255,255,255,.2);
+      background:
+        linear-gradient(90deg, rgba(42, 54, 62, .75) 0 32%, transparent 32% 34%, rgba(42, 54, 62, .62) 34% 66%, transparent 66% 68%, rgba(42, 54, 62, .72) 68%),
+        linear-gradient(#64717a 0 55%, #424d55 55%);
+      box-shadow: 0 10px 40px rgba(0,0,0,.22);
+    }
+    .player-art::after {
+      content: "28 августа · запись экрана";
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      padding: 4px 9px;
+      border-radius: 5px;
+      background: rgba(0,0,0,.48);
+      font-size: 11px;
+    }
+    .play-control {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      width: 54px;
+      min-height: 54px;
+      padding: 0 0 0 3px;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 50%;
+      background: rgba(13,18,22,.74);
+      color: #fff;
+      font-size: 19px;
+    }
+    .player-bottom {
+      position: absolute;
+      z-index: 1;
+      left: 16px;
+      right: 16px;
+      bottom: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+    }
+    .player-progress { flex: 1; height: 4px; border-radius: 3px; background: rgba(255,255,255,.33); }
+    .player-progress i { display: block; width: 34%; height: 100%; border-radius: inherit; background: #fff; }
+    .avatar {
+      display: inline-grid;
+      flex: 0 0 auto;
+      width: 27px;
+      height: 27px;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    /* Direction 1 hex palette: #F5F7F6 #FFFFFF #162C2A #55706D #D8E2DF #126E65 #E8F4F1 #A85D19 #FFF4E7 */
+    .calm-app {
+      color: #162c2a;
+      background: #f5f7f6;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .calm-shell { display: grid; grid-template-columns: 206px minmax(0, 1fr); min-height: 865px; }
+    .calm-side {
+      display: flex;
+      flex-direction: column;
+      padding: 19px 14px;
+      border-right: 1px solid #d8e2df;
+      background: #eef3f1;
+    }
+    .calm-brand { display: flex; align-items: center; min-height: 44px; padding: 0 10px 16px; font-weight: 850; letter-spacing: -.02em; }
+    .calm-brand-mark { width: 26px; height: 26px; margin-right: 9px; border-radius: 8px 8px 8px 2px; background: #126e65; }
+    .calm-nav { display: grid; gap: 5px; }
+    .calm-nav a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 11px;
+      border-radius: 8px;
+      color: #55706d;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .calm-nav a.active { color: #126e65; background: #fff; box-shadow: inset 0 0 0 1px #d8e2df; }
+    .calm-local {
+      margin-top: auto;
+      padding: 12px;
+      border: 1px solid #d8e2df;
+      border-radius: 10px;
+      background: rgba(255,255,255,.58);
+      color: #55706d;
+      font-size: 11px;
+    }
+    .calm-local strong { display: block; margin-bottom: 3px; color: #162c2a; font-size: 12px; }
+    .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%; background: #126e65; }
+    .calm-main { min-width: 0; }
+    .calm-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 65px;
+      padding: 0 24px;
+      border-bottom: 1px solid #d8e2df;
+      background: rgba(255,255,255,.82);
+    }
+    .calm-crumb { color: #55706d; font-size: 13px; }
+    .calm-top-actions { display: flex; gap: 8px; margin-left: auto; }
+    .calm-secondary { border: 1px solid #708781; background: #fff; color: #274845; }
+    .calm-primary { background: #126e65; color: #fff; }
+    .calm-content { max-width: 1130px; margin: 0 auto; padding: 25px; }
+    .calm-title-row { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 18px; }
+    .calm-title-row > div:first-child { min-width: 0; }
+    .calm-overline { margin: 0 0 5px; color: #55706d; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .calm-title-row h3 { margin: 0 0 8px; font-size: 26px; line-height: 1.14; letter-spacing: -.025em; }
+    .calm-meta-line { display: flex; flex-wrap: wrap; gap: 7px 15px; color: #55706d; font-size: 12px; }
+    .calm-complete { margin-left: auto; padding: 6px 10px; border: 1px solid #b9d9d2; border-radius: 99px; color: #126e65; background: #e8f4f1; font-size: 11px; font-weight: 800; white-space: nowrap; }
+    .calm-grid { display: grid; grid-template-columns: minmax(360px, .9fr) minmax(440px, 1.1fr); gap: 17px; align-items: start; }
+    .calm-card { border: 1px solid #d8e2df; border-radius: 12px; background: #fff; box-shadow: 0 4px 15px rgba(24,57,52,.035); }
+    .calm-player { overflow: hidden; border-radius: 12px; }
+    .calm-player .player-art { min-height: 410px; }
+    .calm-player-controls {
+      position: absolute;
+      z-index: 2;
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,.58);
+      border-radius: 9px;
+      background: rgba(13,24,21,.9);
+      font-family: Inter, ui-sans-serif, sans-serif;
+    }
+    .calm-player-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+    .calm-player-control, .calm-transcript-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0 9px;
+      border: 1px solid #a9bbb6;
+      border-radius: 7px;
+      color: #fff;
+      background: #1c2926;
+      font-size: 10px;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .calm-player-control.primary-control { min-width: 104px; color: #162c2a; background: #fff; }
+    .calm-player-time { color: #fff; font: 10px/1.4 SFMono-Regular, Consolas, monospace; }
+    .calm-player-controls label { display: block; margin: 7px 0 2px; color: #d8e5e1; font-size: 10px; }
+    .calm-player-slider { width: 100%; min-height: 44px; accent-color: #fff; cursor: pointer; }
+    .calm-player-note { margin: 0; padding: 9px 12px 11px; color: #d8e5e1; background: #273532; font-size: 10px; }
+    .calm-card-pad { padding: 17px; }
+    .calm-section-title { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: 15px; font-weight: 820; }
+    .calm-section-title small { margin-left: auto; color: #55706d; font-size: 11px; font-weight: 600; }
+    .calm-fields { display: grid; gap: 13px; }
+    .calm-field label { display: block; margin-bottom: 5px; color: #55706d; font-size: 10px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { display: inline-flex; align-items: center; min-height: 30px; padding: 0 9px; border-radius: 99px; font-size: 11px; font-weight: 700; }
+    .calm-app .chip { border: 1px solid #cbd8d5; background: #f5f7f6; color: #274845; }
+    .calm-app .avatar { background: #dcece8; color: #126e65; }
+    .person { display: inline-flex; align-items: center; gap: 7px; color: #274845; font-size: 12px; }
+    .calm-task {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 11px;
+      border: 1px solid #708781;
+      border-radius: 8px;
+      color: #126e65;
+      background: #fbfcfc;
+      font-size: 12px;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .calm-summary { padding: 18px 19px; }
+    .calm-summary h4 { margin: 0 0 10px; font-size: 17px; }
+    .calm-summary > p { margin: 0; color: #405653; font-size: 13px; line-height: 1.62; }
+    .calm-stale {
+      display: grid;
+      grid-template-columns: 30px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      margin: 16px 0;
+      padding: 10px;
+      border: 1px solid #edc99c;
+      border-radius: 10px;
+      background: #fff4e7;
+      color: #78430f;
+      font-size: 11px;
+    }
+    .calm-stale strong { display: block; color: #673806; font-size: 12px; }
+    .stale-sign { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: #f7dbb7; font-weight: 900; }
+    .calm-stale .app-button { min-height: 44px; border: 1px solid #dcad73; background: #fffaf3; color: #78430f; font-size: 11px; }
+    .calm-agreements { overflow: hidden; }
+    .calm-agreements-head { display: flex; align-items: center; min-height: 52px; padding: 0 17px; border-bottom: 1px solid #d8e2df; }
+    .calm-agreements-head h4 { margin: 0; font-size: 15px; }
+    .count-badge { margin-left: 8px; padding: 2px 7px; border-radius: 99px; font-size: 10px; font-weight: 850; }
+    .calm-app .count-badge { background: #e8f4f1; color: #126e65; }
+    .calm-agreement { display: grid; grid-template-columns: 26px 1fr 83px; gap: 10px; padding: 13px 17px; border-bottom: 1px solid #e6ecea; }
+    .calm-agreement:last-child { border-bottom: 0; }
+    .check-mark { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 50%; font-size: 11px; font-weight: 900; }
+    .calm-app .check-mark { background: #e8f4f1; color: #126e65; }
+    .calm-agreement strong { display: block; margin-bottom: 3px; color: #243d3a; font-size: 12px; }
+    .calm-agreement p { margin: 0; color: #55706d; font-size: 11px; line-height: 1.45; }
+    .calm-date { color: #405653; font-size: 10px; font-weight: 750; text-align: right; }
+    .time-link { display: inline-flex; align-items: center; min-height: 44px; color: #126e65; font-size: 10px; font-weight: 800; text-decoration: none; }
+
+    /* Direction 2 hex palette: #F7F3EB #FFFCF7 #1C1B18 #6B655B #C9BCA8 #9C3E2A #F0DFCC #274E4A #E9EEEA */
+    .editorial-app {
+      color: #1c1b18;
+      background: #f7f3eb;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .editorial-app .browser-bar { font-family: Inter, ui-sans-serif, sans-serif; }
+    .editorial-shell { min-height: 960px; background: #fffcf7; }
+    .editorial-nav {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      min-height: 70px;
+      padding: 0 32px;
+      border-bottom: 1px solid #c9bca8;
+      font-family: Inter, ui-sans-serif, sans-serif;
+    }
+    .editorial-back { display: inline-flex; align-items: center; min-height: 44px; color: #6b655b; font-size: 12px; font-weight: 700; text-decoration: none; }
+    .editorial-brand { font-size: 14px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+    .editorial-actions { display: flex; justify-content: flex-end; gap: 6px; }
+    .editorial-actions .app-button { border-radius: 0; font-size: 12px; }
+    .editorial-actions .solid { background: #1c1b18; color: #fff; }
+    .editorial-title {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 245px;
+      gap: 54px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 52px 34px 38px;
+      border-bottom: 1px solid #c9bca8;
+    }
+    .editorial-title .eyebrow { margin: 0 0 12px; color: #9c3e2a; font-family: Inter, ui-sans-serif, sans-serif; font-size: 11px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .editorial-title h3 { max-width: 800px; margin: 0; font-size: clamp(37px, 4.3vw, 60px); font-weight: 500; line-height: .99; letter-spacing: -.045em; }
+    .editorial-title-meta { align-self: end; color: #6b655b; font-family: Inter, ui-sans-serif, sans-serif; font-size: 12px; line-height: 1.8; }
+    .editorial-title-meta strong { color: #1c1b18; }
+    .editorial-body { max-width: 1160px; margin: 0 auto; padding: 34px; }
+    .editorial-lead-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr); gap: 35px; align-items: start; }
+    .editorial-player { border: 1px solid #c9bca8; background: #1c1b18; }
+    .editorial-player .player-art { min-height: 330px; border-bottom: 1px solid #c9bca8; }
+    .editorial-player-caption {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 52px;
+      padding: 0 15px;
+      color: #d9d4ca;
+      background: #1c1b18;
+      font-family: Inter, ui-sans-serif, sans-serif;
+      font-size: 11px;
+    }
+    .editorial-player-caption strong { color: #fff; }
+    .editorial-summary { padding: 0 4px; }
+    .editorial-rule-title { display: flex; align-items: center; gap: 12px; margin: 0 0 18px; color: #9c3e2a; font-family: Inter, ui-sans-serif, sans-serif; font-size: 11px; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
+    .editorial-rule-title::after { content: ""; flex: 1; height: 1px; background: #c9bca8; }
+    .editorial-summary .big-quote { margin: 0; font-size: 22px; line-height: 1.42; letter-spacing: -.015em; }
+    .editorial-summary .summary-note { margin: 20px 0 0; color: #6b655b; font-family: Inter, ui-sans-serif, sans-serif; font-size: 12px; line-height: 1.65; }
+    .editorial-meta-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px; margin-top: 26px; padding-top: 19px; border-top: 1px solid #c9bca8; font-family: Inter, ui-sans-serif, sans-serif; }
+    .editorial-meta-list dt { margin-bottom: 7px; color: #9c3e2a; font-size: 9px; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
+    .editorial-meta-list dd { margin: 0; font-size: 12px; line-height: 1.55; }
+    .editorial-task { display: inline-flex; align-items: center; min-height: 44px; color: #274e4a; font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .editorial-app .chip { min-height: 28px; padding: 0 8px; border: 1px solid #c9bca8; border-radius: 0; background: transparent; color: #4f4b45; }
+    .editorial-app .avatar { width: 25px; height: 25px; background: #f0dfcc; color: #9c3e2a; }
+    .editorial-processing {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-top: 28px;
+      padding: 17px 0;
+      border-top: 1px solid #9c3e2a;
+      border-bottom: 1px solid #c9bca8;
+      font-family: Inter, ui-sans-serif, sans-serif;
+    }
+    .editorial-processing strong { display: block; margin-bottom: 4px; font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-weight: 500; }
+    .editorial-processing span { color: #6b655b; font-size: 11px; }
+    .editorial-processing .progress-ring { display: grid; width: 48px; height: 48px; place-items: center; border: 4px solid #f0dfcc; border-top-color: #9c3e2a; border-radius: 50%; font-size: 10px; font-weight: 800; }
+    .editorial-agreements { margin-top: 55px; }
+    .editorial-agreements-head { display: flex; align-items: baseline; gap: 18px; padding-bottom: 12px; border-bottom: 2px solid #1c1b18; }
+    .editorial-agreements-head h4 { margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -.025em; }
+    .editorial-agreements-head span { color: #6b655b; font-family: Inter, ui-sans-serif, sans-serif; font-size: 11px; }
+    .editorial-agreement { display: grid; grid-template-columns: 66px minmax(0, 1fr) 210px; gap: 26px; padding: 25px 0; border-bottom: 1px solid #c9bca8; }
+    .editorial-index { color: #9c3e2a; font-size: 27px; line-height: 1; }
+    .editorial-agreement h5 { margin: 0 0 7px; font-size: 18px; font-weight: 500; }
+    .editorial-agreement p { margin: 0; color: #6b655b; font-family: Inter, ui-sans-serif, sans-serif; font-size: 11px; line-height: 1.55; }
+    .editorial-evidence { align-self: center; font-family: Inter, ui-sans-serif, sans-serif; font-size: 10px; }
+    .editorial-evidence strong { display: block; margin-bottom: 4px; font-size: 11px; }
+    .editorial-evidence a { display: inline-flex; align-items: center; min-height: 44px; color: #274e4a; font-weight: 850; text-underline-offset: 4px; }
+
+    /* Direction 3 hex palette: #0B1017 #111924 #172231 #26374A #E9F0F5 #98A8B7 #47D7B1 #173C37 #F4B860 #482B1E #FFDDD0 */
+    .ops-app {
+      color: #e9f0f5;
+      background: #0b1017;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+    .ops-shell { display: grid; grid-template-rows: 57px minmax(0, 1fr); min-height: 930px; }
+    .ops-top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 0 18px;
+      border-bottom: 1px solid #26374a;
+      background: #111924;
+      font-size: 11px;
+    }
+    .ops-logo { display: flex; align-items: center; gap: 9px; min-width: 190px; font-weight: 900; letter-spacing: .08em; }
+    .ops-logo-mark { width: 24px; height: 24px; border: 2px solid #47d7b1; border-radius: 4px; box-shadow: inset 7px 0 #47d7b1; }
+    .ops-path { color: #98a8b7; }
+    .ops-path strong { color: #e9f0f5; }
+    .ops-engine { margin-left: auto; padding: 5px 9px; border: 1px solid #28584e; border-radius: 3px; color: #73e0c3; background: #173c37; }
+    .ops-top .app-button { min-height: 44px; border: 1px solid #36495e; border-radius: 3px; color: #e9f0f5; }
+    .ops-body { display: grid; grid-template-columns: 54px minmax(0, 1fr); }
+    .ops-rail { display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 12px 5px; border-right: 1px solid #26374a; background: #0f1620; }
+    .ops-rail a { display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid transparent; border-radius: 3px; color: #718292; text-decoration: none; }
+    .ops-rail a.active { border-color: #345164; color: #47d7b1; background: #172231; }
+    .ops-work { min-width: 0; padding: 17px; }
+    .ops-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; margin-bottom: 13px; }
+    .ops-heading-overline { margin: 0 0 4px; color: #47d7b1; font-size: 9px; font-weight: 850; letter-spacing: .13em; }
+    .ops-heading h3 { margin: 0 0 5px; font-family: Inter, ui-sans-serif, sans-serif; font-size: 23px; line-height: 1.12; letter-spacing: -.02em; }
+    .ops-heading-meta { color: #98a8b7; font-size: 9px; }
+    .ops-heading-actions { display: flex; gap: 7px; }
+    .ops-heading-actions .app-button { border: 1px solid #36495e; border-radius: 3px; color: #dbe5ec; font-size: 10px; }
+    .ops-heading-actions .primary { border-color: #47d7b1; background: #47d7b1; color: #07100e; }
+    .ops-grid-top { display: grid; grid-template-columns: minmax(430px, 1.45fr) minmax(270px, .55fr); gap: 11px; }
+    .ops-panel { border: 1px solid #26374a; border-radius: 3px; background: #111924; }
+    .ops-panel-head { display: flex; align-items: center; min-height: 39px; padding: 0 11px; border-bottom: 1px solid #26374a; color: #98a8b7; font-size: 9px; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .ops-panel-head span:last-child { margin-left: auto; color: #47d7b1; }
+    .ops-player .player-art { min-height: 286px; border-bottom: 1px solid #26374a; background-color: #202b36; }
+    .ops-player-data { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .ops-data { padding: 9px 11px; border-right: 1px solid #26374a; }
+    .ops-data:last-child { border-right: 0; }
+    .ops-data label { display: block; margin-bottom: 3px; color: #718292; font-size: 8px; text-transform: uppercase; }
+    .ops-data strong { color: #dbe5ec; font-size: 10px; }
+    .ops-side-data { padding: 4px 11px 11px; }
+    .ops-field { padding: 10px 0; border-bottom: 1px solid #26374a; }
+    .ops-field:last-child { border-bottom: 0; }
+    .ops-field label { display: block; margin-bottom: 7px; color: #718292; font-size: 8px; letter-spacing: .09em; text-transform: uppercase; }
+    .ops-field > strong { color: #e9f0f5; font-size: 10px; }
+    .ops-app .chip { min-height: 27px; padding: 0 7px; border: 1px solid #36495e; border-radius: 3px; background: #172231; color: #bdc9d3; font-size: 9px; }
+    .ops-app .avatar { width: 24px; height: 24px; border: 1px solid #3a5969; border-radius: 3px; background: #172c38; color: #78d8bf; }
+    .ops-app .person { color: #bdc9d3; font-size: 9px; }
+    .ops-task { display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 0 9px; border: 1px solid #36495e; border-radius: 3px; color: #47d7b1; background: #0f1620; font-size: 10px; font-weight: 850; text-decoration: none; }
+    .ops-error {
+      display: grid;
+      grid-template-columns: 23px 1fr auto;
+      gap: 9px;
+      align-items: center;
+      margin-top: 11px;
+      padding: 10px;
+      border: 1px solid #78442c;
+      border-radius: 3px;
+      color: #ffddd0;
+      background: #482b1e;
+      font-size: 9px;
+    }
+    .ops-error .err-glyph { display: grid; width: 22px; height: 22px; place-items: center; border: 1px solid #f4b860; color: #f4b860; font-weight: 900; }
+    .ops-error strong { display: block; margin-bottom: 2px; color: #fff1e9; font-size: 10px; }
+    .ops-error .app-button { min-height: 44px; border: 1px solid #f4b860; border-radius: 2px; color: #fff1e9; font-size: 9px; }
+    .ops-grid-bottom { display: grid; grid-template-columns: minmax(270px, .7fr) minmax(520px, 1.3fr); gap: 11px; margin-top: 11px; align-items: start; }
+    .ops-summary { padding: 13px; }
+    .ops-summary h4 { margin: 0 0 10px; color: #47d7b1; font-family: Inter, ui-sans-serif, sans-serif; font-size: 15px; }
+    .ops-summary p { margin: 0; color: #bdc9d3; font-family: Inter, ui-sans-serif, sans-serif; font-size: 11px; line-height: 1.55; }
+    .ops-summary-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 13px; background: #26374a; }
+    .ops-summary-stat { padding: 9px; background: #0f1620; }
+    .ops-summary-stat strong { display: block; color: #e9f0f5; font-size: 17px; }
+    .ops-summary-stat span { color: #718292; font-size: 8px; text-transform: uppercase; }
+    .ops-table { width: 100%; border-collapse: collapse; font-size: 9px; }
+    .ops-table th { padding: 9px 8px; border-bottom: 1px solid #36495e; color: #718292; text-align: left; text-transform: uppercase; letter-spacing: .06em; }
+    .ops-table td { padding: 9px 8px; border-bottom: 1px solid #26374a; color: #bdc9d3; vertical-align: top; }
+    .ops-table tr:last-child td { border-bottom: 0; }
+    .ops-table td:first-child { color: #47d7b1; font-weight: 850; }
+    .ops-table strong { display: block; margin-bottom: 3px; color: #e9f0f5; font-family: Inter, ui-sans-serif, sans-serif; font-size: 10px; }
+    .ops-time { display: inline-flex; align-items: center; min-height: 44px; color: #47d7b1; font-weight: 850; }
+    .ops-priority { color: #f4b860; }
+
+    @media (max-width: 1050px) {
+      .calm-shell { grid-template-columns: 58px minmax(0,1fr); }
+      .calm-side { padding-inline: 7px; }
+      .calm-brand span, .calm-nav span, .calm-local { display: none; }
+      .calm-brand { justify-content: center; padding-inline: 0; }
+      .calm-brand-mark { margin-right: 0; }
+      .calm-nav a { justify-content: center; padding: 0; }
+      .editorial-title { grid-template-columns: 1fr; gap: 20px; }
+      .ops-grid-top, .ops-grid-bottom { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 820px) {
+      .page-head, .direction { padding-left: 18px; padding-right: 18px; }
+      .direction-intro { grid-template-columns: 1fr; gap: 14px; }
+      .address { display: none; }
+      .browser-spacer { margin-left: auto; }
+      .calm-grid, .editorial-lead-grid { grid-template-columns: 1fr; }
+      .calm-top { padding-inline: 12px; }
+      .calm-top .calm-crumb { display: none; }
+      .calm-content { padding: 16px; }
+      .editorial-nav { grid-template-columns: 1fr auto; padding-inline: 16px; }
+      .editorial-brand { display: none; }
+      .editorial-title, .editorial-body { padding-left: 20px; padding-right: 20px; }
+      .editorial-agreement { grid-template-columns: 44px 1fr; }
+      .editorial-evidence { grid-column: 2; }
+      .ops-body { grid-template-columns: 1fr; }
+      .ops-rail { display: none; }
+      .ops-work { padding: 10px; }
+      .ops-heading { grid-template-columns: 1fr; }
+      .ops-heading-actions { overflow-x: auto; }
+    }
+    @media (max-width: 560px) {
+      .browser { border-radius: 10px; }
+      .calm-shell { grid-template-columns: 1fr; }
+      .calm-side { display: none; }
+      .calm-title-row { display: block; }
+      .calm-complete { display: inline-block; margin: 10px 0 0; }
+      .calm-agreement { grid-template-columns: 25px 1fr; }
+      .calm-date { grid-column: 2; text-align: left; }
+      .calm-stale { grid-template-columns: 30px 1fr; }
+      .calm-stale .app-button { grid-column: 2; }
+      .editorial-nav .app-button:not(.solid) { display: none; }
+      .editorial-title h3 { font-size: 34px; }
+      .editorial-meta-list { grid-template-columns: 1fr; }
+      .editorial-agreement { grid-template-columns: 1fr; gap: 10px; }
+      .editorial-evidence { grid-column: 1; }
+      .ops-engine, .ops-path { display: none; }
+      .ops-logo { min-width: 0; }
+      .ops-top { gap: 8px; }
+      .ops-player-data { grid-template-columns: 1fr 1fr; }
+      .ops-data { border-bottom: 1px solid #26374a; }
+      .ops-table th:nth-child(3), .ops-table td:nth-child(3) { display: none; }
+      .ops-error { grid-template-columns: 23px 1fr; }
+      .ops-error .app-button { grid-column: 2; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="page-head">
+    <p class="page-kicker">Сравнение визуального характера</p>
+    <h1>Одна встреча. Три разных рабочих пространства.</h1>
+    <p>Во всех вариантах показан один и тот же завершённый разбор: запись, сводка, договорённости, сроки, участники, теги и внешняя задача. Сравнивайте прежде всего ощущение, приоритеты и плотность — содержание намеренно остаётся одинаковым.</p>
+  </header>
+
+  <section class="direction" aria-labelledby="direction-calm">
+    <div class="direction-intro">
+      <div>
+        <p class="direction-label">Направление 01 · рекомендуемое</p>
+        <h2 id="direction-calm">Спокойное рабочее пространство</h2>
+      </div>
+      <p class="rationale">Светлая умеренно плотная система ставит проверяемый результат выше декора и остаётся комфортной при еженедельной работе с архивом. Мягкие границы, компактная навигация и спокойный бирюзовый акцент отделяют действия от содержания, не превращая AI-результат в «магический» интерфейс. Лучше всего подходит как нейтральная база продукта.</p>
+    </div>
+    <div class="browser calm-app" aria-label="Макет спокойного профессионального направления">
+      <div class="browser-bar">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="address">localhost:3090/meetings/ops-241</span>
+        <span class="browser-spacer" aria-hidden="true"></span>
+      </div>
+      <div class="calm-shell">
+        <aside class="calm-side">
+          <div class="calm-brand"><i class="calm-brand-mark" aria-hidden="true"></i><span>Контекст</span></div>
+          <nav class="calm-nav" aria-label="Основная навигация">
+            <a class="active" href="#direction-calm"><b class="glyph" aria-hidden="true">▤</b><span>Встречи</span></a>
+            <a href="#direction-calm"><b class="glyph" aria-hidden="true">⌕</b><span>Поиск</span></a>
+            <a href="#direction-calm"><b class="glyph" aria-hidden="true">♙</b><span>Участники</span></a>
+            <a href="#direction-calm"><b class="glyph" aria-hidden="true">⚙</b><span>Настройки</span></a>
+          </nav>
+          <div class="calm-local"><strong><span class="status-dot"></span>Локальный режим</strong>Данные этой встречи не покидали устройство.</div>
+        </aside>
+        <main class="calm-main">
+          <header class="calm-top">
+            <a class="app-button icon-button calm-secondary" href="#direction-calm" aria-label="Назад к библиотеке">←</a>
+            <span class="calm-crumb">Все встречи / 28 августа 2026</span>
+            <div class="calm-top-actions">
+              <button class="app-button calm-secondary" type="button">Экспорт</button>
+              <button class="app-button calm-primary" type="button">Изменить</button>
+            </div>
+          </header>
+          <div class="calm-content">
+            <div class="calm-title-row">
+              <div>
+                <p class="calm-overline">Встреча</p>
+                <h3>Синхронизация релиза и план запуска</h3>
+                <div class="calm-meta-line"><span>28 августа 2026, 11:00</span><span>1 ч 18 мин</span><span>Обновлено сегодня в 14:32</span></div>
+              </div>
+              <span class="calm-complete">✓ Анализ завершён</span>
+            </div>
+            <div class="calm-grid">
+              <div>
+                <section class="calm-card calm-player" aria-label="Запись встречи">
+                  <div class="player-art">
+                    <div class="calm-player-controls" role="group" aria-label="Иллюстративные элементы управления записью встречи">
+                      <div class="calm-player-row">
+                        <button class="calm-player-control primary-control" type="button" aria-label="Воспроизвести запись встречи">▶ Воспроизвести</button>
+                        <button class="calm-player-control" type="button" aria-label="Перемотать запись на 10 секунд назад">−10 с</button>
+                        <button class="calm-player-control" type="button" aria-label="Перемотать запись на 10 секунд вперёд">+10 с</button>
+                        <span class="calm-player-time" aria-label="26 минут 41 секунда из 1 часа 18 минут 6 секунд">26:41 / 1:18:06</span>
+                      </div>
+                      <label for="calm-player-position">Позиция записи</label>
+                      <input class="calm-player-slider" id="calm-player-position" type="range" min="0" max="4686" value="1601" aria-valuemin="0" aria-valuemax="4686" aria-valuenow="1601" aria-valuetext="26 минут 41 секунда из 1 часа 18 минут 6 секунд">
+                      <div class="calm-player-row">
+                        <button class="calm-player-control" type="button" aria-pressed="false" aria-label="Выключить звук">Звук: вкл.</button>
+                        <button class="calm-player-control" type="button" aria-pressed="true" aria-label="Выключить субтитры; сейчас субтитры включены">Субтитры: вкл.</button>
+                        <button class="calm-player-control" type="button" aria-label="Открыть видео на весь экран">На весь экран</button>
+                        <a class="calm-transcript-link" href="#direction-calm">Открыть расшифровку</a>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="calm-player-note">Статическая схема anatomy: видео и аудио используют одинаковый логический набор контролов; в продукте состояния, ошибки воспроизведения и доступность субтитров объявляются текстом.</p>
+                </section>
+                <section class="calm-card calm-card-pad" style="margin-top:17px">
+                  <h4 class="calm-section-title">О встрече <small>12,4 ГБ на диске</small></h4>
+                  <div class="calm-fields">
+                    <div class="calm-field"><label>Связанная задача</label><a class="calm-task" href="#direction-calm">OPS-241 · Подготовить публичный релиз <span style="margin-left:auto">↗</span></a></div>
+                    <div class="calm-field"><label>Участники</label><div class="chips">
+                      <span class="person"><i class="avatar">СА</i>Сергей А.</span><span class="person"><i class="avatar">МК</i>Мария К.</span><span class="person"><i class="avatar">ИЛ</i>Илья Л.</span>
+                    </div></div>
+                    <div class="calm-field"><label>Теги</label><div class="chips"><span class="chip">релиз</span><span class="chip">инфраструктура</span><span class="chip">Q3</span><span class="chip">+ Добавить</span></div></div>
+                  </div>
+                </section>
+              </div>
+              <div>
+                <section class="calm-card calm-summary">
+                  <h4>Краткая сводка</h4>
+                  <p>Команда согласовала выпуск версии 1.0 на 12 сентября. До 5 сентября Мария завершает проверку миграций, Илья готовит инструкцию по развёртыванию, а Сергей принимает итоговое решение после тестового восстановления резервной копии.</p>
+                  <div class="calm-stale" role="status">
+                    <span class="stale-sign" aria-hidden="true">!</span>
+                    <span><strong>Сводка требует обновления</strong>Расшифровка изменена в 14:28. Текущая сводка создана до правки.</span>
+                    <button class="app-button" type="button">Обновить краткую сводку</button>
+                  </div>
+                  <h4 style="margin-top:0">Основные темы</h4>
+                  <div class="chips"><span class="chip">готовность релиза</span><span class="chip">миграции</span><span class="chip">резервное копирование</span></div>
+                </section>
+                <section class="calm-card calm-agreements" style="margin-top:17px">
+                  <div class="calm-agreements-head"><h4>Все договорённости</h4><span class="count-badge">4 пункта</span></div>
+                  <article class="calm-agreement"><span class="check-mark">✓</span><div><strong>Выпустить версию 1.0 после контрольного восстановления</strong><p>Финальное решение принимает Сергей после проверки резервной копии.</p><a class="time-link" href="#direction-calm">▶ 26:41 · открыть подтверждение</a></div><div class="calm-date">12 сентября</div></article>
+                  <article class="calm-agreement"><span class="check-mark">✓</span><div><strong>Завершить проверку миграций</strong><p>Ответственная: Мария К. Результат добавить в OPS-241.</p><a class="time-link" href="#direction-calm">▶ 34:18 · открыть подтверждение</a></div><div class="calm-date">до 5 сентября</div></article>
+                  <article class="calm-agreement"><span class="check-mark">✓</span><div><strong>Подготовить инструкцию по развёртыванию</strong><p>Ответственный: Илья Л. Отдельно описать откат версии.</p><a class="time-link" href="#direction-calm">▶ 48:03 · открыть подтверждение</a></div><div class="calm-date">до 8 сентября</div></article>
+                  <article class="calm-agreement"><span class="check-mark">✓</span><div><strong>Провести короткую проверку перед публикацией</strong><p>Созвон назначен после завершения документации и миграций.</p><a class="time-link" href="#direction-calm">▶ 1:04:22 · открыть подтверждение</a></div><div class="calm-date">10 сентября</div></article>
+                </section>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <section class="direction" aria-labelledby="direction-editorial">
+    <div class="direction-intro">
+      <div>
+        <p class="direction-label">Направление 02</p>
+        <h2 id="direction-editorial">Редакционный разбор</h2>
+      </div>
+      <p class="rationale">Просторная композиция превращает встречу в хорошо отредактированный документ: сначала смысл, затем доказательства и метаданные. Контраст шрифтов, широкие поля и длинные горизонтальные ритмы располагают к вдумчивому чтению, но уменьшают количество информации на первом экране. Подходит, если продукт должен ощущаться как личный архив решений, а не панель управления.</p>
+    </div>
+    <div class="browser editorial-app" aria-label="Макет редакционного направления">
+      <div class="browser-bar">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="address">localhost:3090/meetings/ops-241</span>
+        <span class="browser-spacer" aria-hidden="true"></span>
+      </div>
+      <div class="editorial-shell">
+        <header class="editorial-nav">
+          <a class="editorial-back" href="#direction-editorial">← Архив встреч</a>
+          <div class="editorial-brand">Контекст</div>
+          <div class="editorial-actions"><button class="app-button" type="button">Экспорт</button><button class="app-button solid" type="button">Редактировать</button></div>
+        </header>
+        <main>
+          <section class="editorial-title">
+            <div><p class="eyebrow">Разбор встречи · завершён</p><h3>Синхронизация релиза и план запуска</h3></div>
+            <div class="editorial-title-meta"><strong>28 августа 2026</strong><br>11:00–12:18 · 1 ч 18 мин<br>Три участника<br>Запись хранится локально</div>
+          </section>
+          <div class="editorial-body">
+            <div class="editorial-lead-grid">
+              <section class="editorial-player" aria-label="Запись встречи">
+                <div class="player-art"><button class="play-control" type="button" aria-label="Воспроизвести встречу">▶</button><div class="player-bottom"><span>26:41</span><span class="player-progress"><i></i></span><span>1:18:06</span><span>▣</span></div></div>
+                <div class="editorial-player-caption"><strong>Запись встречи</strong><span>MP4 · 12,4 ГБ</span><span style="margin-left:auto">Локальный файл</span></div>
+              </section>
+              <section class="editorial-summary">
+                <h4 class="editorial-rule-title">Краткая сводка</h4>
+                <p class="big-quote">Команда согласовала выпуск версии 1.0 на 12 сентября — после контрольного восстановления резервной копии и завершения проверки миграций.</p>
+                <p class="summary-note">Мария завершает миграции до 5 сентября. Илья готовит инструкцию по развёртыванию и откату. Сергей принимает итоговое решение после проверки.</p>
+                <dl class="editorial-meta-list">
+                  <div><dt>Связанная задача</dt><dd><a class="editorial-task" href="#direction-editorial">OPS-241 ↗</a></dd></div>
+                  <div><dt>Участники</dt><dd><span class="person"><i class="avatar">СА</i>Сергей</span><br><span class="person"><i class="avatar">МК</i>Мария</span><br><span class="person"><i class="avatar">ИЛ</i>Илья</span></dd></div>
+                  <div style="grid-column:1/-1"><dt>Темы</dt><dd class="chips"><span class="chip">релиз</span><span class="chip">инфраструктура</span><span class="chip">Q3</span></dd></div>
+                </dl>
+                <aside class="editorial-processing" role="status"><div><strong>Готовим новое саммари</strong><span>Расшифровка готова · суммаризация выполняется локально</span></div><span class="progress-ring">68%</span></aside>
+              </section>
+            </div>
+            <section class="editorial-agreements">
+              <div class="editorial-agreements-head"><h4>Договорённости</h4><span>Полный список · 4 пункта</span></div>
+              <article class="editorial-agreement"><span class="editorial-index">01</span><div><h5>Выпустить версию 1.0 после контрольного восстановления</h5><p>Решение принимает Сергей. Публикация зависит от успешной проверки резервной копии.</p></div><div class="editorial-evidence"><strong>Срок · 12 сентября</strong><a href="#direction-editorial">Слушать с 26:41 →</a></div></article>
+              <article class="editorial-agreement"><span class="editorial-index">02</span><div><h5>Завершить проверку миграций</h5><p>Ответственная — Мария. Результат проверки необходимо добавить в задачу OPS-241.</p></div><div class="editorial-evidence"><strong>Срок · до 5 сентября</strong><a href="#direction-editorial">Слушать с 34:18 →</a></div></article>
+              <article class="editorial-agreement"><span class="editorial-index">03</span><div><h5>Подготовить инструкцию по развёртыванию и откату</h5><p>Ответственный — Илья. Инструкция должна покрывать чистую установку и возврат версии.</p></div><div class="editorial-evidence"><strong>Срок · до 8 сентября</strong><a href="#direction-editorial">Слушать с 48:03 →</a></div></article>
+              <article class="editorial-agreement"><span class="editorial-index">04</span><div><h5>Провести короткую проверку перед публикацией</h5><p>Созвон проводится после готовности документации и подтверждения миграций.</p></div><div class="editorial-evidence"><strong>Дата · 10 сентября</strong><a href="#direction-editorial">Слушать с 1:04:22 →</a></div></article>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <section class="direction" aria-labelledby="direction-ops">
+    <div class="direction-intro">
+      <div>
+        <p class="direction-label">Направление 03</p>
+        <h2 id="direction-ops">Операционная консоль</h2>
+      </div>
+      <p class="rationale">Тёмный плотный интерфейс трактует каждую встречу как рабочий объект со статусами, источниками и проверяемыми выходами. Моноширинная типографика, резкие границы и табличные договорённости ускоряют сканирование большого объёма деталей, но делают продукт более техническим. Подходит опытному владельцу, который ценит наблюдаемость обработки и максимум данных без прокрутки.</p>
+    </div>
+    <div class="browser ops-app" aria-label="Макет плотного операционного направления">
+      <div class="browser-bar" style="background:#0f1620;color:#98a8b7;border-color:#26374a">
+        <span class="dots" aria-hidden="true"><i style="background:#36495e"></i><i style="background:#36495e"></i><i style="background:#36495e"></i></span>
+        <span class="address" style="background:#111924;border-color:#26374a">localhost:3090/meetings/ops-241</span>
+        <span class="browser-spacer" aria-hidden="true"></span>
+      </div>
+      <div class="ops-shell">
+        <header class="ops-top">
+          <div class="ops-logo"><i class="ops-logo-mark" aria-hidden="true"></i>КОНТЕКСТ</div>
+          <div class="ops-path">ВСТРЕЧИ / <strong>MTG-0087</strong></div>
+          <span class="ops-engine">● LOCAL PIPELINE · READY</span>
+          <button class="app-button" type="button">ЭКСПОРТ ↓</button>
+        </header>
+        <div class="ops-body">
+          <nav class="ops-rail" aria-label="Основная навигация"><a class="active" href="#direction-ops" aria-label="Встречи">▤</a><a href="#direction-ops" aria-label="Поиск">⌕</a><a href="#direction-ops" aria-label="Участники">♙</a><a href="#direction-ops" aria-label="Настройки">⚙</a></nav>
+          <main class="ops-work">
+            <div class="ops-heading">
+              <div><p class="ops-heading-overline">MTG-0087 · АНАЛИЗ ЗАВЕРШЁН ✓</p><h3>Синхронизация релиза и план запуска</h3><div class="ops-heading-meta">2026-08-28 11:00 · 01:18:06 · UPDATED 14:32 · SOURCE REV. 14</div></div>
+              <div class="ops-heading-actions"><button class="app-button" type="button">УДАЛИТЬ</button><button class="app-button" type="button">ИЗМЕНИТЬ</button><button class="app-button primary" type="button">СОЗДАТЬ СВОДКУ</button></div>
+            </div>
+            <div class="ops-grid-top">
+              <section class="ops-panel ops-player" aria-label="Запись встречи">
+                <div class="ops-panel-head"><span>ИСХОДНАЯ ЗАПИСЬ</span><span>READY / LOCAL</span></div>
+                <div class="player-art"><button class="play-control" type="button" aria-label="Воспроизвести встречу">▶</button><div class="player-bottom"><span>00:26:41</span><span class="player-progress"><i></i></span><span>01:18:06</span><span>▣</span></div></div>
+                <div class="ops-player-data"><div class="ops-data"><label>Формат</label><strong>MP4 / H.264</strong></div><div class="ops-data"><label>Размер</label><strong>12,4 ГБ</strong></div><div class="ops-data"><label>Хранение</label><strong>БЕССРОЧНО</strong></div><div class="ops-data"><label>Сеть</label><strong style="color:#47d7b1">НЕТ ПЕРЕДАЧИ</strong></div></div>
+              </section>
+              <section class="ops-panel">
+                <div class="ops-panel-head"><span>МЕТАДАННЫЕ</span><span>EDITABLE</span></div>
+                <div class="ops-side-data">
+                  <div class="ops-field"><label>Связанная задача</label><a class="ops-task" href="#direction-ops">OPS-241 · ПУБЛИЧНЫЙ РЕЛИЗ <span>↗</span></a></div>
+                  <div class="ops-field"><label>Участники / 3</label><div class="chips"><span class="person"><i class="avatar">СА</i>СЕРГЕЙ</span><span class="person"><i class="avatar">МК</i>МАРИЯ</span><span class="person"><i class="avatar">ИЛ</i>ИЛЬЯ</span></div></div>
+                  <div class="ops-field"><label>Теги / авто + вручную</label><div class="chips"><span class="chip">#РЕЛИЗ</span><span class="chip">#ИНФРАСТРУКТУРА</span><span class="chip">#Q3</span><span class="chip">+ ТЕГ</span></div></div>
+                  <aside class="ops-error" role="alert"><span class="err-glyph">!</span><span><strong>ПОДТВЕРЖДЕНИЕ НЕ НАЙДЕНО</strong>1 открытый вопрос не связан с таймкодом.</span><button class="app-button" type="button">ПРОВЕРИТЬ</button></aside>
+                </div>
+              </section>
+            </div>
+            <div class="ops-grid-bottom">
+              <section class="ops-panel">
+                <div class="ops-panel-head"><span>КРАТКАЯ СВОДКА</span><span>REV.14 / VERIFIED</span></div>
+                <div class="ops-summary"><h4>Релиз 1.0 согласован на 12 сентября.</h4><p>Перед выпуском команда завершает миграции, готовит инструкцию по развёртыванию и проверяет восстановление резервной копии. Итоговое решение принимает Сергей.</p><div class="ops-summary-stats"><div class="ops-summary-stat"><strong>4</strong><span>договорённости</span></div><div class="ops-summary-stat"><strong>4/4</strong><span>со сроками</span></div><div class="ops-summary-stat"><strong>4</strong><span>подтверждения</span></div><div class="ops-summary-stat"><strong>1</strong><span>открытый вопрос</span></div></div></div>
+              </section>
+              <section class="ops-panel">
+                <div class="ops-panel-head"><span>ВСЕ ДОГОВОРЁННОСТИ / 4</span><span>4 VERIFIED</span></div>
+                <table class="ops-table">
+                  <thead><tr><th>ID</th><th>Договорённость</th><th>Ответственный</th><th>Срок</th><th>Источник</th></tr></thead>
+                  <tbody>
+                    <tr><td>A-01</td><td><strong>Выпустить версию 1.0 после контрольного восстановления</strong>Итоговое решение — после проверки резервной копии.</td><td>СЕРГЕЙ</td><td class="ops-priority">12 СЕН</td><td><a class="ops-time" href="#direction-ops">▶ 26:41</a></td></tr>
+                    <tr><td>A-02</td><td><strong>Завершить проверку миграций</strong>Результат добавить в OPS-241.</td><td>МАРИЯ</td><td>05 СЕН</td><td><a class="ops-time" href="#direction-ops">▶ 34:18</a></td></tr>
+                    <tr><td>A-03</td><td><strong>Подготовить инструкцию по развёртыванию</strong>Описать чистую установку и откат.</td><td>ИЛЬЯ</td><td>08 СЕН</td><td><a class="ops-time" href="#direction-ops">▶ 48:03</a></td></tr>
+                    <tr><td>A-04</td><td><strong>Провести короткую проверку перед публикацией</strong>После готовности документации и миграций.</td><td>ВСЕ</td><td>10 СЕН</td><td><a class="ops-time" href="#direction-ops">▶ 1:04:22</a></td></tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
