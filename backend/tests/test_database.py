@@ -1,3 +1,4 @@
+import os
 import sqlite3
 from pathlib import Path
 from typing import Any
@@ -39,8 +40,22 @@ def test_alembic_seed_creates_product_schema_and_persists_wal(tmp_path: Path) ->
     assert _journal_mode(database) == "wal"
 
 
-def test_sqlalchemy_url_treats_question_mark_as_filename_data(tmp_path: Path) -> None:
-    database = tmp_path / "meeting?notes.sqlite3"
+@pytest.mark.parametrize(
+    "filename",
+    [
+        "meeting#notes.sqlite3",
+        pytest.param(
+            "meeting?notes.sqlite3",
+            marks=pytest.mark.skipif(
+                os.name == "nt", reason="Windows filesystems reject question marks"
+            ),
+        ),
+    ],
+)
+def test_sqlalchemy_url_treats_reserved_characters_as_filename_data(
+    tmp_path: Path, filename: str
+) -> None:
+    database = tmp_path / filename
     upgrade_database(database)
 
     assert database.is_file()
