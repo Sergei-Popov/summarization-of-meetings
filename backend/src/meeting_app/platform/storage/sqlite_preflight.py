@@ -93,11 +93,15 @@ def _windows_filesystem(path: Path) -> str:
         drive = path.resolve().drive + "\\"
         if not drive.strip("\\"):
             return "unknown"
-        get_drive_type = ctypes.windll.kernel32.GetDriveTypeW  # type: ignore[attr-defined]
+        windll = vars(ctypes).get("windll")
+        if windll is None:
+            return "unknown"
+        kernel32 = windll.kernel32
+        get_drive_type = kernel32.GetDriveTypeW
         if get_drive_type(drive) == 4:  # DRIVE_REMOTE
             return "cifs"
         name_buffer = ctypes.create_unicode_buffer(256)
-        ok = ctypes.windll.kernel32.GetVolumeInformationW(  # type: ignore[attr-defined]
+        ok = kernel32.GetVolumeInformationW(
             drive,
             None,
             0,
