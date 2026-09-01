@@ -1,0 +1,3 @@
+peerDependencyRules:
+  allowedVersions:
+    "openapi-typescript>typescript": "6"

@@ -1,0 +1,14 @@
+target-version = "py313"
+line-length = 100
+extend-exclude = [
+  ".agents",
+  ".bmad-loop",
+  ".claude",
+  "_bmad",
+  "_bmad-output",
+  "frontend",
+  "research_meeting_summarization_landscape",
+]
+
+[lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]

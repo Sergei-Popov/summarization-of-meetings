@@ -1,0 +1,58 @@
+[project]
+name = "meeting-app"
+version = "0.1.0"
+description = "Локальное приложение для транскрибации и суммаризации встреч"
+readme = "../README.md"
+requires-python = "==3.13.15"
+license = { text = "Apache-2.0" }
+dependencies = [
+  "alembic==1.19.1",
+  "fastapi==0.141.1",
+  "pydantic==2.13.5",
+  "sqlalchemy==2.0.52",
+  "uvicorn==0.52.4",
+]
+
+[dependency-groups]
+dev = [
+  "httpx==0.28.1",
+  "mypy==2.3.1",
+  "pytest==9.1.1",
+  "ruff==0.16.5",
+]
+
+[build-system]
+requires = ["hatchling==1.29.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/meeting_app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "../tests/release"]
+addopts = "--strict-config --strict-markers"
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+extend-exclude = [
+  ".agents",
+  ".bmad-loop",
+  ".claude",
+  "_bmad",
+  "_bmad-output",
+  "frontend",
+  "research_meeting_summarization_landscape",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+packages = ["meeting_app"]
+
+[[tool.mypy.overrides]]
+module = "alembic.*"
+ignore_missing_imports = true

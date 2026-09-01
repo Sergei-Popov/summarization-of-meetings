@@ -1,0 +1,36 @@
+name: meeting-app
+
+services:
+  app:
+    image: ${MEETING_APP_IMAGE:-meeting-app:local}
+    build:
+      context: .
+      dockerfile: deploy/app.Dockerfile
+    environment:
+      MEETING_APP_DATA_DIR: /var/lib/meeting-app
+    init: true
+    ports:
+      - "127.0.0.1:${MEETING_APP_PORT:-8000}:8000"
+    volumes:
+      - meeting-data:/var/lib/meeting-app
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health', timeout=2).read()"
+      interval: 5s
+      timeout: 3s
+      retries: 24
+      start_period: 10s
+    restart: "no"
+
+volumes:
+  meeting-data:
