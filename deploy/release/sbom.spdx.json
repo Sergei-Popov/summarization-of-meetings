@@ -1,0 +1,1968 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "creationInfo": {
+    "created": "2026-09-01T00:00:00Z",
+    "creators": [
+      "Tool: deploy/release/generate_inventory.py"
+    ]
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "urn:uuid:0381080d-ea62-5bb4-baf2-c10a74cc689c",
+  "name": "meeting-app-0.1.0",
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-meeting-app",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "name": "meeting-app",
+      "versionInfo": "0.1.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-alembic-1.19.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/alembic@1.19.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "alembic",
+      "versionInfo": "1.19.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-annotated-doc-0.0.5",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/annotated-doc@0.0.5",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "annotated-doc",
+      "versionInfo": "0.0.5"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-annotated-types-0.8.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/annotated-types@0.8.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "annotated-types",
+      "versionInfo": "0.8.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-anyio-4.14.2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/anyio@4.14.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "anyio",
+      "versionInfo": "4.14.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-click-8.5.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/click@8.5.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "click",
+      "versionInfo": "8.5.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-fastapi-0.141.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/fastapi@0.141.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "fastapi",
+      "versionInfo": "0.141.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-greenlet-3.5.5",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/greenlet@3.5.5",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT AND PSF-2.0",
+      "licenseDeclared": "MIT AND PSF-2.0",
+      "name": "greenlet",
+      "versionInfo": "3.5.5"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-h11-0.16.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/h11@0.16.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "h11",
+      "versionInfo": "0.16.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-idna-3.19",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/idna@3.19",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "idna",
+      "versionInfo": "3.19"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-mako-1.4.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/mako@1.4.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "mako",
+      "versionInfo": "1.4.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-markupsafe-3.0.3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/markupsafe@3.0.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "markupsafe",
+      "versionInfo": "3.0.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-pydantic-2.13.5",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/pydantic@2.13.5",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "pydantic",
+      "versionInfo": "2.13.5"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-pydantic-core-2.46.5",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/pydantic-core@2.46.5",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "pydantic-core",
+      "versionInfo": "2.46.5"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-sqlalchemy-2.0.52",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/sqlalchemy@2.0.52",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "sqlalchemy",
+      "versionInfo": "2.0.52"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-starlette-1.6.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/starlette@1.6.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "starlette",
+      "versionInfo": "1.6.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-typing-extensions-4.16.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/typing-extensions@4.16.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "name": "typing-extensions",
+      "versionInfo": "4.16.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-typing-inspection-0.4.4",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/typing-inspection@0.4.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "typing-inspection",
+      "versionInfo": "0.4.4"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-PyPI-uvicorn-0.52.4",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/uvicorn@0.52.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "uvicorn",
+      "versionInfo": "0.52.4"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--ant-design-colors-8.0.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40ant-design/colors@8.0.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@ant-design/colors",
+      "versionInfo": "8.0.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--ant-design-cssinjs-2.1.2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40ant-design/cssinjs@2.1.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@ant-design/cssinjs",
+      "versionInfo": "2.1.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--ant-design-cssinjs-utils-2.1.2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40ant-design/cssinjs-utils@2.1.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@ant-design/cssinjs-utils",
+      "versionInfo": "2.1.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--ant-design-fast-color-3.0.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40ant-design/fast-color@3.0.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@ant-design/fast-color",
+      "versionInfo": "3.0.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--ant-design-icons-6.3.4",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40ant-design/icons@6.3.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@ant-design/icons",
+      "versionInfo": "6.3.4"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--ant-design-icons-svg-4.6.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40ant-design/icons-svg@4.6.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@ant-design/icons-svg",
+      "versionInfo": "4.6.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--ant-design-react-slick-2.0.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40ant-design/react-slick@2.0.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@ant-design/react-slick",
+      "versionInfo": "2.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--babel-runtime-7.29.7",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40babel/runtime@7.29.7",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@babel/runtime",
+      "versionInfo": "7.29.7"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--babel-runtime-8.0.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40babel/runtime@8.0.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@babel/runtime",
+      "versionInfo": "8.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--emotion-hash-0.8.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40emotion/hash@0.8.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@emotion/hash",
+      "versionInfo": "0.8.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--emotion-unitless-0.7.5",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40emotion/unitless@0.7.5",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@emotion/unitless",
+      "versionInfo": "0.7.5"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-async-validator-6.0.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/async-validator@6.0.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/async-validator",
+      "versionInfo": "6.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-cascader-1.22.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/cascader@1.22.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/cascader",
+      "versionInfo": "1.22.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-checkbox-2.0.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/checkbox@2.0.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/checkbox",
+      "versionInfo": "2.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-collapse-1.2.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/collapse@1.2.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/collapse",
+      "versionInfo": "1.2.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-color-picker-3.1.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/color-picker@3.1.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/color-picker",
+      "versionInfo": "3.1.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-context-2.0.2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/context@2.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/context",
+      "versionInfo": "2.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-dialog-1.10.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/dialog@1.10.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/dialog",
+      "versionInfo": "1.10.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-drawer-1.4.2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/drawer@1.4.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/drawer",
+      "versionInfo": "1.4.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-dropdown-1.0.3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/dropdown@1.0.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/dropdown",
+      "versionInfo": "1.0.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-form-1.8.6",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/form@1.8.6",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/form",
+      "versionInfo": "1.8.6"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-image-1.10.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/image@1.10.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/image",
+      "versionInfo": "1.10.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-input-1.3.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/input@1.3.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/input",
+      "versionInfo": "1.3.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-input-number-1.6.2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/input-number@1.6.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/input-number",
+      "versionInfo": "1.6.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-listy-1.2.3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/listy@1.2.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/listy",
+      "versionInfo": "1.2.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-mentions-1.12.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/mentions@1.12.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/mentions",
+      "versionInfo": "1.12.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-menu-1.5.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/menu@1.5.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/menu",
+      "versionInfo": "1.5.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-mini-decimal-1.1.4",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/mini-decimal@1.1.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/mini-decimal",
+      "versionInfo": "1.1.4"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-motion-1.3.3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/motion@1.3.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/motion",
+      "versionInfo": "1.3.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-mutate-observer-2.0.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/mutate-observer@2.0.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/mutate-observer",
+      "versionInfo": "2.0.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-notification-2.0.8",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/notification@2.0.8",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/notification",
+      "versionInfo": "2.0.8"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-overflow-1.0.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/overflow@1.0.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/overflow",
+      "versionInfo": "1.0.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-pagination-1.4.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/pagination@1.4.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/pagination",
+      "versionInfo": "1.4.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-picker-1.12.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/picker@1.12.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/picker",
+      "versionInfo": "1.12.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-portal-2.2.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/portal@2.2.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/portal",
+      "versionInfo": "2.2.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-progress-1.0.3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/progress@1.0.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/progress",
+      "versionInfo": "1.0.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-qrcode-2.0.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/qrcode@2.0.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/qrcode",
+      "versionInfo": "2.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-rate-1.0.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/rate@1.0.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/rate",
+      "versionInfo": "1.0.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-resize-observer-1.1.2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/resize-observer@1.1.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/resize-observer",
+      "versionInfo": "1.1.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-segmented-1.3.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/segmented@1.3.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/segmented",
+      "versionInfo": "1.3.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-select-1.10.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/select@1.10.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/select",
+      "versionInfo": "1.10.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-slider-1.1.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/slider@1.1.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/slider",
+      "versionInfo": "1.1.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-steps-1.2.3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/steps@1.2.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/steps",
+      "versionInfo": "1.2.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-switch-1.0.3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/switch@1.0.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/switch",
+      "versionInfo": "1.0.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-table-1.11.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/table@1.11.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/table",
+      "versionInfo": "1.11.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-tabs-1.13.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/tabs@1.13.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/tabs",
+      "versionInfo": "1.13.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-tooltip-1.5.2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/tooltip@1.5.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/tooltip",
+      "versionInfo": "1.5.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-tour-2.4.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/tour@2.4.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/tour",
+      "versionInfo": "2.4.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-tree-1.4.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/tree@1.4.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/tree",
+      "versionInfo": "1.4.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-tree-select-1.16.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/tree-select@1.16.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/tree-select",
+      "versionInfo": "1.16.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-trigger-3.10.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/trigger@3.10.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/trigger",
+      "versionInfo": "3.10.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-upload-1.1.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/upload@1.1.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/upload",
+      "versionInfo": "1.1.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-util-1.12.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/util@1.12.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/util",
+      "versionInfo": "1.12.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm--rc-component-virtual-list-1.5.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/%40rc-component/virtual-list@1.5.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "@rc-component/virtual-list",
+      "versionInfo": "1.5.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-antd-6.6.2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/antd@6.6.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "antd",
+      "versionInfo": "6.6.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-clsx-2.1.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/clsx@2.1.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "clsx",
+      "versionInfo": "2.1.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-compute-scroll-into-view-3.1.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/compute-scroll-into-view@3.1.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "compute-scroll-into-view",
+      "versionInfo": "3.1.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-csstype-3.2.3",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/csstype@3.2.3",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "csstype",
+      "versionInfo": "3.2.3"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-dayjs-1.11.23",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/dayjs@1.11.23",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "dayjs",
+      "versionInfo": "1.11.23"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-is-mobile-5.0.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/is-mobile@5.0.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "is-mobile",
+      "versionInfo": "5.0.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-json2mq-0.2.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/json2mq@0.2.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "json2mq",
+      "versionInfo": "0.2.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-react-19.2.7",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/react@19.2.7",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "react",
+      "versionInfo": "19.2.7"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-react-dom-19.2.7",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/react-dom@19.2.7",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "react-dom",
+      "versionInfo": "19.2.7"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-react-is-19.2.8",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/react-is@19.2.8",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "react-is",
+      "versionInfo": "19.2.8"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-scheduler-0.27.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/scheduler@0.27.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "scheduler",
+      "versionInfo": "0.27.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-scroll-into-view-if-needed-3.1.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/scroll-into-view-if-needed@3.1.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "scroll-into-view-if-needed",
+      "versionInfo": "3.1.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-string-convert-0.2.1",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/string-convert@0.2.1",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "string-convert",
+      "versionInfo": "0.2.1"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-stylis-4.4.0",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/stylis@4.4.0",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "stylis",
+      "versionInfo": "4.4.0"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-npm-throttle-debounce-5.0.2",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:npm/throttle-debounce@5.0.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "throttle-debounce",
+      "versionInfo": "5.0.2"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-source-SQLite-3.53.4",
+      "copyrightText": "NOASSERTION",
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:generic/SQLite@3.53.4",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "blessing",
+      "licenseDeclared": "blessing",
+      "name": "SQLite",
+      "versionInfo": "3.53.4"
+    }
+  ],
+  "relationships": [
+    {
+      "relatedSpdxElement": "SPDXRef-Package-meeting-app",
+      "relationshipType": "DESCRIBES",
+      "spdxElementId": "SPDXRef-DOCUMENT"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-alembic-1.19.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-annotated-doc-0.0.5",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-annotated-types-0.8.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-anyio-4.14.2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-click-8.5.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-fastapi-0.141.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-greenlet-3.5.5",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-h11-0.16.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-idna-3.19",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-mako-1.4.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-markupsafe-3.0.3",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-pydantic-2.13.5",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-pydantic-core-2.46.5",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-sqlalchemy-2.0.52",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-starlette-1.6.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-typing-extensions-4.16.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-typing-inspection-0.4.4",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-PyPI-uvicorn-0.52.4",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--ant-design-colors-8.0.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--ant-design-cssinjs-2.1.2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--ant-design-cssinjs-utils-2.1.2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--ant-design-fast-color-3.0.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--ant-design-icons-6.3.4",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--ant-design-icons-svg-4.6.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--ant-design-react-slick-2.0.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--babel-runtime-7.29.7",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--babel-runtime-8.0.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--emotion-hash-0.8.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--emotion-unitless-0.7.5",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-async-validator-6.0.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-cascader-1.22.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-checkbox-2.0.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-collapse-1.2.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-color-picker-3.1.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-context-2.0.2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-dialog-1.10.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-drawer-1.4.2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-dropdown-1.0.3",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-form-1.8.6",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-image-1.10.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-input-1.3.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-input-number-1.6.2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-listy-1.2.3",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-mentions-1.12.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-menu-1.5.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-mini-decimal-1.1.4",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-motion-1.3.3",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-mutate-observer-2.0.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-notification-2.0.8",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-overflow-1.0.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-pagination-1.4.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-picker-1.12.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-portal-2.2.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-progress-1.0.3",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-qrcode-2.0.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-rate-1.0.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-resize-observer-1.1.2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-segmented-1.3.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-select-1.10.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-slider-1.1.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-steps-1.2.3",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-switch-1.0.3",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-table-1.11.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-tabs-1.13.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-tooltip-1.5.2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-tour-2.4.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-tree-1.4.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-tree-select-1.16.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-trigger-3.10.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-upload-1.1.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-util-1.12.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm--rc-component-virtual-list-1.5.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-antd-6.6.2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-clsx-2.1.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-compute-scroll-into-view-3.1.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-csstype-3.2.3",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-dayjs-1.11.23",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-is-mobile-5.0.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-json2mq-0.2.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-react-19.2.7",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-react-dom-19.2.7",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-react-is-19.2.8",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-scheduler-0.27.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-scroll-into-view-if-needed-3.1.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-string-convert-0.2.1",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-stylis-4.4.0",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-npm-throttle-debounce-5.0.2",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    },
+    {
+      "relatedSpdxElement": "SPDXRef-Package-source-SQLite-3.53.4",
+      "relationshipType": "DEPENDS_ON",
+      "spdxElementId": "SPDXRef-Package-meeting-app"
+    }
+  ],
+  "spdxVersion": "SPDX-2.3"
+}

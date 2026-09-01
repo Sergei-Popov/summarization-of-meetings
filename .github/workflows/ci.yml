@@ -1,0 +1,81 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  host-gates:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15, windows-2025]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: 3.13.15
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78
+        with:
+          version: 0.11.21
+          enable-cache: true
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.20.0
+      - run: corepack enable && corepack prepare pnpm@11.1.3 --activate
+      - run: uv sync --project backend --frozen
+      - run: uv run --project backend --frozen python backend/scripts/export_openapi.py
+      - run: git diff --exit-code -- openapi/openapi.json
+      - run: pnpm --dir frontend install --frozen-lockfile
+      - run: pnpm --dir frontend test
+      - run: pnpm --dir frontend build
+      - run: uv run --project backend --frozen python deploy/release/generate_inventory.py
+      - run: git diff --exit-code -- deploy/release/sbom.spdx.json deploy/release/third-party-licenses.json
+      - run: uv run --project backend --frozen pytest -c backend/pyproject.toml backend/tests tests/release
+      - run: uv run --project backend --frozen ruff check --config ruff.toml .
+      - run: uv run --project backend --frozen mypy --config-file backend/pyproject.toml backend/src
+
+  backend-exact-container:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - name: Verify backend and release on pinned Python image
+        run: docker build --target backend-verify --file deploy/app.Dockerfile .
+
+  compose-smoke:
+    needs: [host-gates, backend-exact-container]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - name: Install exact Docker Compose
+        run: |
+          curl --fail --show-error --location \
+            https://github.com/docker/compose/releases/download/v5.4.0/docker-compose-linux-x86_64 \
+            --output /tmp/docker-compose
+          echo "837fd1d35bf6a494f41b5b5988269a7be79de337cf1a1a6ff0e45ab51bb4e9be  /tmp/docker-compose" \
+            | sha256sum --check --strict
+          sudo install --mode 0755 --directory /usr/local/lib/docker/cli-plugins
+          sudo install --mode 0755 /tmp/docker-compose /usr/local/lib/docker/cli-plugins/docker-compose
+          test "$(docker compose version --short)" = "5.4.0"
+      - name: Build and start production Compose application
+        run: docker compose up --build --wait
+      - name: Smoke health, UI, referenced local asset and exact runtime
+        shell: bash
+        run: |
+          curl --fail --show-error http://127.0.0.1:8000/api/v1/health
+          curl --fail --show-error http://127.0.0.1:8000/ --output /tmp/index.html
+          grep --fixed-strings "Meeting App" /tmp/index.html
+          asset="$(sed -n 's/.*src="\([^"]*\/assets\/[^"]*\)".*/\1/p' /tmp/index.html | head -1)"
+          test -n "$asset"
+          curl --fail --show-error "http://127.0.0.1:8000${asset}" --output /tmp/frontend-asset
+          test -s /tmp/frontend-asset
+          docker compose exec -T app python --version | grep --fixed-strings "Python 3.13.15"
+          docker compose exec -T app python -c \
+            "import sqlite3; assert sqlite3.sqlite_version == '3.53.4'"
+      - name: Tear down Compose application
+        if: always()
+        run: docker compose down --volumes --remove-orphans

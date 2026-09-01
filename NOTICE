@@ -1,0 +1,7 @@
+Meeting App
+Copyright 2026 Meeting App contributors
+
+This product includes software developed by third parties. Exact versions and
+license identifiers are listed in deploy/release/third-party-licenses.json and
+deploy/release/sbom.spdx.json. SQLite is distributed under its public-domain
+blessing; see https://www.sqlite.org/copyright.html.
