@@ -3,8 +3,8 @@ from __future__ import annotations
 import os
 import sqlite3
 import tempfile
-from collections.abc import Callable
-from contextlib import suppress
+from collections.abc import Callable, Iterator
+from contextlib import contextmanager, suppress
 from pathlib import Path
 
 from alembic import command
@@ -15,6 +15,16 @@ from sqlalchemy.engine import Connection
 from meeting_app.platform.storage.sqlite_preflight import StorageInitializationError
 
 MigrationRunner = Callable[[Config, str], None]
+
+
+@contextmanager
+def _sqlite_connection(database_path: Path) -> Iterator[sqlite3.Connection]:
+    connection = sqlite3.connect(database_path)
+    try:
+        with connection:
+            yield connection
+    finally:
+        connection.close()
 
 
 def _sidecars(path: Path) -> tuple[Path, ...]:
@@ -30,9 +40,9 @@ def _remove_sidecars(path: Path) -> None:
 def _backup_existing(source: Path, destination: Path) -> None:
     if not source.exists():
         return
-    with sqlite3.connect(source) as source_connection:
+    with _sqlite_connection(source) as source_connection:
         source_connection.execute("PRAGMA wal_checkpoint(TRUNCATE)")
-        with sqlite3.connect(destination) as destination_connection:
+        with _sqlite_connection(destination) as destination_connection:
             source_connection.backup(destination_connection)
 
 
@@ -80,7 +90,7 @@ def upgrade_database(
         engine.dispose()
         engine = None
 
-        with sqlite3.connect(staging_path) as verification:
+        with _sqlite_connection(staging_path) as verification:
             mode = verification.execute("PRAGMA journal_mode").fetchone()
             if mode is None or str(mode[0]).lower() != "wal":
                 raise StorageInitializationError("storage.product_wal_unavailable")
